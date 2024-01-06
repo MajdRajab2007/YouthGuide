@@ -2,14 +2,14 @@ import Navbar from "../components/Navbar"
 import Slider from "../components/Slider"
 
 
-    function Home(props)
+    function Home()
  {
 
     return (
         <>
             <Navbar />
             <Slider />
-        {props.children}
+
         </>
     )
  }

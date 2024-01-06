@@ -7,7 +7,7 @@ function Footer() {
         <>
                 <footer className="footer fixed-bottom" >
                     <div className="container">
-                        <p className="footerText">حقوق الملكية محفوظة 2023 دليل الشباب - Youth Guide</p>
+                        <p className="footerText">حقوق الملكية محفوظة 2023&copy;  دليل الشباب - Youth Guide</p>
                     </div>
                 </footer>
         </>

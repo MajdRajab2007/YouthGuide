@@ -68,13 +68,13 @@
 }
 .aboutText {
     background-color: #09dbbe;
-    width: 60%;
+    width: 70%;
     color: #eee;
     border: 2px solid #eee;
     font-weight: bold;
     font-size: 18px;
     padding: 10px 14px;
-    line-height: 2.7;
+    line-height: 4;
     transition: 0.5s;
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
@@ -120,9 +120,9 @@
     -o-transition: 0.4s;
 }
 .backHome:hover {
+    border: 2px solid #1292ad;
     background-color: #eee;
     color: #1292ad;
-    border: 2px solid #1292ad;
     transition: 0.4s;
     -webkit-transition: 0.4s;
     -moz-transition: 0.4s;
