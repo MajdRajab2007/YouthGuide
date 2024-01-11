@@ -45,4 +45,82 @@
 
 .theSlider {
     box-shadow: 0px 12px 20px 5px #1292ad;
+    position: relative;
+}
+.learn {
+    /* text-shadow: 6px 6px 6px black; */
+    -webkit-text-stroke: 1px #04abcf;
+    position: absolute;
+    right: 45%;
+    font-weight: bold;
+    top: 28%;
+    z-index: 3;
+    font-size: 70px;
+    color: #eee;
+    animation-name: learn;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: backwards;
+}
+.create {
+    -webkit-text-stroke: 1px #04abcf;
+    position: absolute;
+    right: 30%;
+    top: 37%;
+    z-index: 3;
+    font-weight: bold;
+    font-size: 70px;
+    color: #eee;
+    animation-name: create;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+}
+
+.develop {
+    -webkit-text-stroke: 1px #04abcf;
+    font-weight: bold;
+    position: absolute;
+    right: 12%;
+    top: 48%;
+    z-index: 3;
+    font-size: 70px;
+    color: #eee;
+    animation-name: develop;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-delay: 2s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes learn {
+    from {
+        right: -100%;
+        top: -37%;
+    }
+    to {
+        right: 45%;
+
+    }
+}
+@keyframes create {
+    from {
+        right: -100%;
+
+    }
+    to {
+        right: 30%;
+
+    }
+}
+@keyframes develop {
+    from {
+        right: -100%;
+
+    }
+    to {
+        right: 12%;
+
+    }
 }

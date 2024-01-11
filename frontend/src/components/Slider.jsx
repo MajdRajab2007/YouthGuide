@@ -13,6 +13,9 @@ function Slider() {
                 className="carousel theSlider slide"
                 data-bs-ride="carousel"
             >
+                    <h1 className="learn">Learn</h1>
+                    <h1 className="create">Create</h1>
+                    <h1 className="develop">Develop</h1>
                 <div className="carousel-inner">
                     <div
                         className=" sliderImg3 carousel-item active"
