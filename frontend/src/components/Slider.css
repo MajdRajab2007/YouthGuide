@@ -97,6 +97,7 @@
 @keyframes learn {
     from {
         right: -100%;
+        background-color: #04abcf;
         top: -37%;
     }
     to {
@@ -107,6 +108,8 @@
 @keyframes create {
     from {
         right: -100%;
+        background-color: #04abcf;
+
 
     }
     to {
@@ -117,6 +120,8 @@
 @keyframes develop {
     from {
         right: -100%;
+        background-color: #04abcf;
+
 
     }
     to {
