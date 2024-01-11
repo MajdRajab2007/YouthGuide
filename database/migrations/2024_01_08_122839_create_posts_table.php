@@ -11,15 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->boolean('is_super')->default(false);
-            $table->rememberToken();
             $table->timestamps();
+            $table->string('title');
+            $table->text('body');
+<<<<<<< HEAD
+            $table->string('image')->nullable();
+            $table->foreignId('user_id')->constrained();
+=======
+>>>>>>> dda57f884eab55a7edcac7266c0d556f3211084d
         });
     }
 
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('posts');
     }
 };
