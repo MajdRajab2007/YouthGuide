@@ -2,6 +2,7 @@ import logo from "../images/logo.png";
 import { Link } from "react-router-dom";
 import "./Navbar.css"
 import { useState } from "react";
+import whiteLogo from "../images/logoWhite.png"
 function Navbar() {
 
     let [navbar, setNavbar] = useState(false)
@@ -21,7 +22,7 @@ function Navbar() {
             <nav  className={navbar ? "navbar theNavbar fixed-top navbar-expand-lg active" : "navbar theNavbar fixed-top navbar-expand-lg"}>
                 <div className="container">
                     <Link className="navbar-brand" to="/">
-                        <img className="teamLogo" src={logo} alt="logo" />
+                        <img className="teamLogo" src={navbar ? whiteLogo : logo} alt="logo" />
                     </Link>
                     <button
                         className="navbar-toggler menuIcon"
