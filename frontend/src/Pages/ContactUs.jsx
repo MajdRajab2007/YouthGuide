@@ -1,5 +1,5 @@
 import logo from "../images/logo.png";
-import { FaFacebook, FaMailBulk, FaPhone, FaSearchLocation, FaTelegram, FaWhatsapp, FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaInstagramSquare, FaMailBulk, FaPhone, FaSearchLocation, FaTelegram, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./ContactUs.css"
 import Footer from "../components/Footer";
@@ -45,9 +45,10 @@ function ContactUs() {
                     <div className="socialmediaContact mt-5">
                         <p>أو عبر وسائل التواصل الأجتماعي</p>
                         <div className="socialIcons">
-                            <span className="socialIcon" style={{color:"red"}} ><FaYoutube /></span>
-                            <span className="socialIcon" style={{color:"blue"}}><FaFacebook/></span>
-                            <span className="socialIcon" style={{color:"#0172AF"}}><FaTelegram /></span>
+                            <a href="https://youtube.com/@YouthGuide4U?feature=shared" target="_blank"><span className="socialIcon" style={{color:"#1292ad"}} ><FaYoutube /></span></a>
+                            <a href="https://www.facebook.com/YouthGuide1" target="_blank"><span className="socialIcon" style={{color:"#1292ad"}}><FaFacebook/></span></a>
+                            <a href="https://t.me/youthguidechannel" target="_blank"><span className="socialIcon" style={{color:"#1292ad"}}><FaTelegram /></span></a>
+                            <a href="https://www.instagram.com/youthguideoffical?igsh=MTB0OGJoc3Bqamtydw==" target="_blank"><span className="socialIcon" style={{color:"#1292ad"}}><FaInstagram /></span></a>
                         </div>
                     </div>
                 </div>
