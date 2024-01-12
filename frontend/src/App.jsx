@@ -11,6 +11,7 @@ import AboutUs from './Pages/AboutUs.jsx';
 import ContactUs from './Pages/ContactUs.jsx';
 import OurServ from './Pages/OurServ.jsx';
 import Aticles from './Pages/Articles.jsx';
+import Programming from './Pages/Programming.jsx';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             <Route path='/signup' element={<Signup />} />
             <Route path='/signin' element={<Signin />} />
             <Route path='/signinfalse' element={<Signinfalse />} />
+            <Route path='/programming' element={<Programming />} />
             </Routes>
 
           </>

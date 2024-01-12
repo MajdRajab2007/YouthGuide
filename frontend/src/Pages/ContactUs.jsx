@@ -14,7 +14,7 @@ function ContactUs() {
                             className=" col-4"
                             style={{ display: "flex", alignItems: "center" }}
                         >
-                            <img className="teamlogo" src={logo} alt=".." />
+                           <Link to="/"> <img className="teamlogo" src={logo} alt=".." /></Link>
                         </div>
                         <div
                             className="col-7"

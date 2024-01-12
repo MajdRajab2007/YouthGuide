@@ -31,7 +31,7 @@ function Signup() {
     //         });
     // };
 
-            
+
 
     return (
         <>
@@ -51,7 +51,7 @@ function Signup() {
                                 required
                                 minLength="2"
                                 maxLength="18"
-                                placeholder="Ahmed"
+                                placeholder="الاسم"
                                 className="form-control"
                             />
                             <p
@@ -117,7 +117,7 @@ function Signup() {
 
                         <div className="d-grid">
                             <input
-                            
+
                                 type="submit"
                                 className="btn btn-youth"
                                 value="تسجيل الحساب"

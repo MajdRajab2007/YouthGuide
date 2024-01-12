@@ -65,6 +65,10 @@
         justify-content: center;
         align-items: center;
     }
+    .backStep {
+        font-size: 10px;
+        top: 8% !important;
+    }
 }
 .aboutText {
     background-color: #09dbbe;
@@ -120,6 +124,33 @@
     -o-transition: 0.4s;
 }
 .backHome:hover {
+    border: 2px solid #1292ad;
+    background-color: #eee;
+    color: #1292ad;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+.backStep {
+    background-color: #1292ad;
+    width: 10%;
+    position: absolute;
+    top:  8%;
+    left: 2%;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    color: #eee;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+.backStep:hover {
     border: 2px solid #1292ad;
     background-color: #eee;
     color: #1292ad;

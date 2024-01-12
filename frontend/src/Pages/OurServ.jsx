@@ -19,7 +19,7 @@ function OurServ() {
                     <div className="container">
                     <div className="row headOfAbout">
                         <div className=" col-4 mt-3" style={{display:"flex", alignItems:"center"}}>
-                            <img className="teamlogo" style={{backgroundColor:"#09dbbe"}} src={wLogo} alt=".." />
+                            <Link to="/"><img className="teamlogo" style={{backgroundColor:"#09dbbe"}} src={wLogo} alt=".." /></Link>
 
                         </div>
                         <div className="col-7" style={{display:"flex", alignItems:"center"}}><p className="whous whatWeHave">خدماتنا</p></div>
