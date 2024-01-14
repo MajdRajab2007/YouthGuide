@@ -16,11 +16,11 @@ return new class extends Migration
             $table->timestamps();
             $table->string('title');
             $table->text('body');
-<<<<<<< HEAD
+
             $table->string('image')->nullable();
             $table->foreignId('user_id')->constrained();
-=======
->>>>>>> dda57f884eab55a7edcac7266c0d556f3211084d
+
+
         });
     }
 
