@@ -8,16 +8,28 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     // This will be unfinished currently until i find if adham can send
-    // the user id
+   public function create(Request $request) // the user id
+  
+   { 
     $incomingFields = $request->validate([
-            'title'=>'required',
-            'body'=>'required',
-        ]);
+               'title'=>'required',
+               'body'=>'required',
+           ]);
+   
+       //image validation
+       if($request->hasFile('image')){
+               $incomingFields['image'] = $request->file('image')->store('images','public');
+           }
+               Post::create($incomingFields);
+           }
 
-    //image validation
-    if($request->hasFile('image')){
-            $incomingFields['image'] = $request->file('image')->store('images','public');
-        }
-            Post::create($incomingFields);
+    public function all()
+    {
+        $post = Post::all();
+        return response()->json($post);
+    }
+    public function show($id){
 
+        $post = Post::find($id);
+    }
 }
