@@ -82,8 +82,19 @@ function Navbar() {
                                 </Link>
                             </li>
 
+
+
                         </ul>
                     </div>
+                                <Link
+                                onClick={() => localStorage.clear()}
+                                className="nav-item logout btn btn-danger"
+                                style={{color:"#eee"}}
+                                    aria-current="page"
+                                    to="/signin"
+                                >
+                                        تسجيل الخروج
+                                </Link>
                 </div>
             </nav>
         </>

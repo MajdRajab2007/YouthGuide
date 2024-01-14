@@ -20,12 +20,15 @@
     -moz-transition: 0.5s;
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
+    box-shadow: 2px 5px 16px 0px black;
 }
 .langProgContainer {
     justify-content: center;
     align-items: center;
 }
 .langBox:hover {
-    background-color: #fff;
-    color: #09dbbe;
+    width: 240px;
+    height: 240px;
+    font-size: 34px;
+
 }

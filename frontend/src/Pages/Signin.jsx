@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import "./Signup.css";
 import logo from "../images/logo.png";
+import { useLocalState } from "../until/useLocalStorage";
 
 function Signin() {
-    
+        const [jwt, setJwt] = useLocalState("" , "jwt")
 
     return (
         <>
@@ -16,6 +17,9 @@ function Signin() {
                         <form
                             action="http://127.0.0.1:8000/login"
                             method="POST"
+                            onSubmit={() => {
+                                    setJwt("jwt")
+                            }}
                         >
                             <img
                                 className="mt-5 logoAct "

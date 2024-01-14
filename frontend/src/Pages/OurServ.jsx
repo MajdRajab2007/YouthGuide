@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom"
-import Navbar from "../components/Navbar"
-import logo from "../images/logo.png"
 import wLogo from "../images/logoWhite.png"
-import plane from "../images/plane.jpg"
+import plane from "../images/plane.png"
 import video from "../images/video.png"
-import pen from "../images/pen.jpg"
+import pen from "../images/pen.png"
 import "./AboutUs.css"
 import "./OurServ.css"
+import Footer from "../components/Footer"
 
 function OurServ() {
 
@@ -19,7 +18,7 @@ function OurServ() {
                     <div className="container">
                     <div className="row headOfAbout">
                         <div className=" col-4 mt-3" style={{display:"flex", alignItems:"center"}}>
-                            <Link to="/"><img className="teamlogo" style={{backgroundColor:"#09dbbe"}} src={wLogo} alt=".." /></Link>
+                            <Link to="/"><img className="teamlogo" style={{backgroundColor:"#"}} src={wLogo} alt=".." /></Link>
 
                         </div>
                         <div className="col-7" style={{display:"flex", alignItems:"center"}}><p className="whous whatWeHave">خدماتنا</p></div>
@@ -29,7 +28,7 @@ function OurServ() {
                     <div className="row mt-3">
                             <div className="cardAbout  col-lg-4 col-md-6 col-12 mt-4">
                                 <div className="aboutText cardServ">
-                            <img style={{width:"200px", height:"200px"}} src={video} alt="..."/>
+                            <img className="OurServIcons" style={{width:"200px", height:"200px"}} src={video} alt="..."/>
                                         <h3 className="ourServHead">إنتاج الفيديوهات</h3>
                                         <p className="mt-3" style={{color:"black", fontSize:"14px", width:"50%", lineHeight:"1"}}>تسجيل الفيديوهات المجانية في مختلف المجالات بشكل مجاني</p>
                                     </div>
@@ -37,7 +36,7 @@ function OurServ() {
                                     </div>
                             <div className="cardAbout  col-lg-4 col-md-6 col-12 mt-4">
                                 <div className="aboutText cardServ">
-                            <img style={{width:"200px", height:"200px"}} src={pen} alt="..." />
+                            <img className="OurServIcons" style={{width:"200px", height:"200px"}} src={pen} alt="..." />
                                 <h3 className="ourServHead">التدوين وكتابة المقالات</h3>
                                 <p className="mt-3" style={{color:"black", fontSize:"14px", width:"50%", lineHeight:"1"}}>تدوين وكتابة مقالات قصيرة تدريبية لتغطية مختلف المهارات والمجالات البرمجية</p>
 
@@ -47,7 +46,7 @@ function OurServ() {
                                 </div>
                             <div className="cardAbout  col-lg-4 col-md-6 col-12 mt-4">
                                 <div className="aboutText cardServ">
-                            <img style={{width:"200px", height:"200px"}} src={plane} alt="..." />
+                            <img className="OurServIcons" style={{width:"200px", height:"200px"}} src={plane} alt="..." />
                                 <h3 className="ourServHead">تقديم خارطة الطريق</h3>
                                 <p className="mt-3" style={{color:"black", fontSize:"14px", width:"50%", lineHeight:"1"}}>تقديم خارطة الطريق الصحيح لأكثر من 120 مجال تريد تعلمه من خلال الاعتماد على تقنية الذكاء الصنعي</p>
 
@@ -58,9 +57,10 @@ function OurServ() {
 
 
                     </div>
-                    <div style={{clear:"both"}}></div>
+                    <div className="mb-5" style={{clear:"both"}}></div>
                     <Link to="/" className="btn backHome">الصفحة الرئيسية</Link>
                 </div>
+                <Footer />
 
 
         </>

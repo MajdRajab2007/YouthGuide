@@ -3,6 +3,10 @@
     width: 70px;
     height: 70px;
 }
+.logout {
+    margin-left: 10px;
+    width: 200px;
+}
 .navLink {
     background-color: #09dbbe;
     color: #eee;
@@ -20,6 +24,7 @@
 }
 .theNavbar {
     background-color: transparent;
+
 }
 .theNavbar.active {
     background-color: #1292ad;
