@@ -8,62 +8,54 @@ use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 class AuthController extends Controller
 {
-    public function register(RegisterRequest $request) {
+public function register(Request $request)
+    {
+        
+        $incomingFields = $request->validate([
+            'name' => ['required', 'min:2', 'max:10', Rule::unique('users', 'name'), 'alpha'],
+            'lName' => ['required', 'min:2', 'max:10', Rule::unique('users', 'lName'), 'alpha'],
+            'email' => ['required', 'email', Rule::unique('users', 'email')],
+            'password' => ['required', 'min:8', 'max:200'],
 
-        $data = $request->validated();
-
-        $user = User::create([
-            'name' => $data['name'],
-            'lName'=> $data['lName'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
         ]);
 
-        $token = $user->createToken('auth_token')->plainTextToken;
 
-        $cookie = cookie('token', $token, 60 * 24); // 1 day
+        $incomingFields['password'] = bcrypt($incomingFields['password']);
 
-        return response()->json([
-            'user' => new UserResource($user),
-        ])->withCookie($cookie);
+        $user = User::create($incomingFields);
+        
+        auth()->login($user);
+
+        return redirect('http://localhost:3000/');
     }
-
     // login a user method
-    public function login(LoginRequest $request) {
-        $data = $request->validated();
-
-        $user = User::where('email', $data['loginemail'])->first();
-
-        if (!$user || !Hash::check($data['loginpassword'], $user->password)) {
-            return response()->json([
-                'message' => 'Email or password is incorrect!'
-            ], 401);
+public function login(Request $request)
+    {
+        $incomingFields = $request->validate([
+            'loginemail' => 'required',
+            'loginpassword' => 'required'
+        ]);
+        if (auth()->attempt(['email' => $incomingFields['loginemail'], 'password' => $incomingFields['loginpassword']])) {
+            return redirect('http://localhost:3000/');
         }
+        else {
 
-        $token = $user->createToken('auth_token')->plainTextToken;
-
-        $cookie = cookie('token', $token, 60 * 24); // 1 day
-
-        return response()->json([
-            'user' => new UserResource($user),
-        ])->withCookie($cookie);
-    }
+            return redirect('http://localhost:3000/signinfalse');
+        }
+        
+    
+}
 
     // logout a user method
-    public function logout(Request $request) {
-        $request->user()->currentAccessToken()->delete();
-
-        $cookie = cookie()->forget('token');
-
-        return response()->json([
-            'message' => 'Logged out successfully!'
-        ])->withCookie($cookie);
-    }
+    
 
     // get the authenticated user method
-    public function user(Request $request) {
-        return new UserResource($request->user());
+    public function user($email) {
+
+        $user = User::find($email);
+        return response()->json($user); 
     }
 }
