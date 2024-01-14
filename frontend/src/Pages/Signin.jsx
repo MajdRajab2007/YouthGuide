@@ -1,14 +1,29 @@
 import { Link } from "react-router-dom";
 import "./Signup.css";
 import logo from "../images/logo.png";
-import { useEffect } from "react";
-import { useLocalState } from "../until/useLocalStorage";
+import { useState } from "react";
+import apiClient from "../axios";
+
 
 function Signin() {
-    const [jwt, setJwt] = useLocalState("", "jwt")
-useEffect(() => {
-       
-},[])
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+
+      apiClient.get("/sanctum/csrf-cookie").then((response) => {
+        apiClient
+          .post("/api/login", {
+            email: email,
+            password: password,
+            device_name: "React v0.1",
+          })
+          .then((response) => {
+            console.log(response);
+          });
+      });
+    };
 
     return (
         <>
@@ -19,8 +34,7 @@ useEffect(() => {
                         style={{ height: "70%" }}
                     >
                         <form
-                            action="http://127.0.0.1:8000/api/login"
-                            method="POST"
+                                onSubmit={handleSubmit}
                         >
                             <img
                                 className="mt-5 logoAct "
@@ -39,6 +53,8 @@ useEffect(() => {
                                     type="email"
                                     placeholder="البريد الإلكتروني"
                                     className="form-control"
+                                    value={email}
+                                 onChange={(e) => setEmail(e.target.value)}
                                 />
                                 <p
                                     style={{ color: "red", fontWeight: "bold" }}
@@ -52,11 +68,13 @@ useEffect(() => {
                                 <input
                                     name="loginpassword"
                                     type="password"
-                                    required
                                     minLength="10"
                                     maxLength="28"
                                     placeholder="كلمة السر"
                                     className="form-control"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    required
                                 />
                                 <p
                                     style={{ color: "red", fontWeight: "bold" }}
