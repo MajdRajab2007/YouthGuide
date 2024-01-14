@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('body');
             $table->string('label');
             $table->string('image')->nullable();
-            $table->foreignId('user_id')->constrained();
+            // $table->foreignId('user_id')->constrained();
 
 
         });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\PostsRequest;
+use App\Models\Posts;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
@@ -24,6 +25,31 @@ class PostsCrudController extends CrudController
      * 
      * @return void
      */
+//     public function create()
+// {
+//     $this->crud->hasAccessOrFail('create');
+
+//     // make and initialize an empty instance of the Post model
+//     $post = new Posts();
+
+//     // set the user that created the post to the currently logged in user
+//     $post->user_id = backpack_user()->id;
+
+//     // get the Post model
+//     $model = $this->crud->getModel();
+
+//     // get the table name of the Post model
+//     $tableName = $model->getTable();
+
+//     // load the view from /resources/views/vendor/backpack/crud/ if it exists, otherwise load the one in the package
+//     return view($this->crud->getCreateView(), [
+//         'title' => $this->crud->getTitle() ?? trans('backpack::crud.add').' '.$tableName,
+//         'model' => $model,
+//         'tableName' => $tableName,
+//         'post' => $post,
+//         'crud' => $this->crud,
+//     ]);
+// }
     public function setup()
     {
         CRUD::setModel(\App\Models\Posts::class);
@@ -67,7 +93,7 @@ class PostsCrudController extends CrudController
 
             CRUD::field([   // select_from_array
                 'name'        => 'label',
-                'label'       => "Label",
+                'label'       => "label",
                 'type'        => 'select_from_array',
                 'options'     => ['coding' => 'Coding', 'video' => 'Video Editing','graphic' => 'Graphic Design',],
                 'allows_null' => false,

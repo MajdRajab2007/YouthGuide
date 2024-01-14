@@ -10,6 +10,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Posts extends Model
 {
+    protected $fillable = [
+        'title',
+        'body',
+        'image',
+        'label'
+    ];
     use CrudTrait;
     use HasFactory;
     
