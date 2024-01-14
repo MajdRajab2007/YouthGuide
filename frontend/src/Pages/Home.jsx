@@ -8,9 +8,11 @@ import Slider from "../components/Slider"
 
     function Home()
  {
-    useEffect(() => {
-        localStorage.setItem("jwt", "jwt")
-    }, [])
+    // useEffect(() => {
+    //     if(window.location.href === 'http://localhost:8000/' ) {
+    //         localStorage.setItem('jwt','jwt')
+    //     }
+    // }, [])
 
 
     return (

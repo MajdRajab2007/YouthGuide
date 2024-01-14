@@ -38,7 +38,7 @@ function Signup() {
             <img className="  logoAct" src={logo} alt="sada" />
             <div className="login template d-flex vh-100 ms-5 align-items-center w-100  backgroundForForm">
                 <div className="40-w p-5 rounded  formContainer">
-                    <form  action="http://127.0.0.1:8000/api/users" method="POST">
+                    <form  action="http://127.0.0.1:8000/register" method="POST">
                         <h3 className="text-center">تسجيل حساب جديد</h3>
                         <div className="mb-2 mt-3">
                             <label htmlFor="name">الاسم</label>

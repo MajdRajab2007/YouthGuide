@@ -1,8 +1,21 @@
 import { Link } from "react-router-dom";
 import "./Signup.css";
 import logo from "../images/logo.png";
+import {  Navigate } from "react-router-dom";
+import { useEffect } from "react"
+
 
 function Signinfalse() {
+             
+        useEffect(() => {
+          <Navigate to="/signin" />
+    }, [])
+         window.localStorage.setItem("jwt", "");
+                  window.localStorage.setItem("messege", "البيانات المدخلة غير صحيحة");
+
+         window.location.href = "/signin"
+               
+
 
     return (
         <>
