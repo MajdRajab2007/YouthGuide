@@ -86,7 +86,7 @@ function Navbar() {
 
                         </ul>
                     </div>
-                                <Link
+                                {/* <Link
                                 onClick={() => localStorage.clear()}
                                 className="nav-item logout btn btn-danger"
                                 style={{color:"#eee"}}
@@ -94,7 +94,7 @@ function Navbar() {
                                     to="/signin"
                                 >
                                         تسجيل الخروج
-                                </Link>
+                                </Link> */}
                 </div>
             </nav>
         </>

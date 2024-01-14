@@ -1,51 +1,9 @@
 import { Link } from "react-router-dom";
 import "./Signup.css";
 import logo from "../images/logo.png";
-import { useLocalState } from "../until/useLocalStorage";
-import React from 'react';
-import { Navigate, Outlet } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
-import React from 'react';
-import { Link, Navigate } from 'react-router-dom';
-import axios from '../axios';
-import { useAuth } from '../contexts/AuthContext';
-
-
-
-
-
 
 function Signin() {
 
-        // const [jwt, setJwt] = useLocalState("" , "jwt")
-        const { user } = useAuth();
-        if (user) {
-            return <Navigate to="/" />;
-        }
-        const { setUser, csrfToken } = useAuth();
-	const [error, setError] = React.useState(null);
-
-	// login user
-	const handleSubmit = async (e) => {
-		e.preventDefault();
-		const { email, password } = e.target.elements;
-		const body = {
-			email: email.value,
-			password: password.value,
-		};
-		await csrfToken();
-		try {
-			const resp = await axios.post('/login', body);
-			if (resp.status === 200) {
-				setUser(resp.data.user);
-				return <Navigate to="/" />;
-			}
-		} catch (error) {
-			if (error.response.status === 401) {
-				setError(error.response.data.message);
-			}
-		}
-	};
 
     return (
         <>
@@ -56,11 +14,8 @@ function Signin() {
                         style={{ height: "70%" }}
                     >
                         <form
-                            action="http://127.0.0.1:8000/api/login"
+                            action="http://127.0.0.1:8000/login"
                             method="POST"
-                            onSubmit={() => {
-                                    setJwt("jwt")
-                            }}
                         >
                             <img
                                 className="mt-5 logoAct "
