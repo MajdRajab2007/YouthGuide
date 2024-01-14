@@ -24,6 +24,7 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name'=>'required|string|max:255',
+            'lName'=>'required|string|max:255',
             'emai;'=>'required|email|unique:users,email|max:255',
             'password'=>[
                 'required',
