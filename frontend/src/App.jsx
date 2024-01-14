@@ -12,25 +12,51 @@ import ContactUs from './Pages/ContactUs.jsx';
 import OurServ from './Pages/OurServ.jsx';
 import Aticles from './Pages/Articles.jsx';
 import Programming from './Pages/Programming.jsx';
+import { useLocalState } from './until/useLocalStorage.jsx';
+import PrivateRoute from './private-route/private-route.jsx';
 
 
 function App() {
-        
+        const [jwt, setJwt] = useLocalState("", "jwt")
 
     return (
 
           <>
 
         <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/about-us' element={<AboutUs />} />
-            <Route path='/contact-us' element={<ContactUs />} />
-            <Route path='/our-services' element={<OurServ />} />
-            <Route path='/articles' element={<Aticles />} />
+            <Route path='/' element={
+                <PrivateRoute>
+                    <Home />
+                </PrivateRoute>
+            } />
+            <Route path='/about-us' element={
+                  <PrivateRoute>
+                  <AboutUs/>
+              </PrivateRoute>
+            } />
+            <Route path='/contact-us' element={
+                  <PrivateRoute>
+                  <ContactUs/>
+              </PrivateRoute>
+            } />
+            <Route path='/our-services' element={
+                  <PrivateRoute>
+                  <OurServ />
+              </PrivateRoute>
+            } />
+            <Route path='/articles' element={
+                  <PrivateRoute>
+                  <Aticles />
+              </PrivateRoute>
+            } />
             <Route path='/signup' element={<Signup />} />
             <Route path='/signin' element={<Signin />} />
             <Route path='/signinfalse' element={<Signinfalse />} />
-            <Route path='/programming' element={<Programming />} />
+            <Route path='/programming' element={
+                  <PrivateRoute>
+                  <Programming />
+              </PrivateRoute>
+            } />
             </Routes>
 
           </>
