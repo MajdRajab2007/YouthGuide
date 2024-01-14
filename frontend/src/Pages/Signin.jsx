@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
 import "./Signup.css";
 import logo from "../images/logo.png";
+import { useEffect } from "react";
+import { useLocalState } from "../until/useLocalStorage";
 
 function Signin() {
-
+    const [jwt, setJwt] = useLocalState("", "jwt")
+useEffect(() => {
+       
+},[])
 
     return (
         <>
@@ -14,7 +19,7 @@ function Signin() {
                         style={{ height: "70%" }}
                     >
                         <form
-                            action="http://127.0.0.1:8000/login"
+                            action="http://127.0.0.1:8000/api/login"
                             method="POST"
                         >
                             <img
