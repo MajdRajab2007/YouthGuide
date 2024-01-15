@@ -19,30 +19,32 @@ use App\Models\User;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::middleware(['cors'])->prefix('auth')->group(function () {
+    Route::get(
+        'users/{email}',
+        function (Request $request) {
+            $user = User::where('email', $request->email)->first();
 
-Route::get('users/{email}', function (Request $request)
-{
-    $user = User::where('email', $request->email)->first();
-
-    if ($user) {
-        return response()->json([
-            'status' => true,
-            'message' => 'User found successfully.',
-            'data' => $user
-        ]);
-    } else {
-        return response()->json([
-            'status' => false,
-            'message' => 'User not found.',
-        ]);
-    }
-}
-);
+            if ($user) {
+                return response()->json([
+                    'status' => true,
+                    'message' => 'User found successfully.',
+                    'data' => $user
+                ]);
+            } else {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'User not found.',
+                ]);
+            }
+        }
+    );
 
 
-Route::get('user/', function (Request $request) {
+    Route::get('user/', function (Request $request) {
 
-    $users = User::all();
+        $users = User::all();
 
-    return response()->json($users);
+        return response()->json($users);
+    });
 });

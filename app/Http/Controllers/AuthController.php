@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Resources\UserResource;
+use App\Models\NormalUser;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -25,7 +26,7 @@ public function register(Request $request)
 
         $incomingFields['password'] = bcrypt($incomingFields['password']);
 
-        $user = User::create($incomingFields);
+        $user = NormalUser::create($incomingFields);
         
         auth()->login($user);
 

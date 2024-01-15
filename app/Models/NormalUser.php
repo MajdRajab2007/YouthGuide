@@ -10,7 +10,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 
-class User extends Authenticatable
+class NormalUser extends Authenticatable
 {
     use CrudTrait;
     use HasApiTokens, HasFactory, Notifiable;
@@ -22,6 +22,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'lName',
         'email',
         'password',
     ];
@@ -45,7 +46,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-    public function posts(){
-        return $this->hasMany('App\Models\Post');
-    }
+    
 }
