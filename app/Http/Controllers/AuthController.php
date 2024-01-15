@@ -8,6 +8,7 @@ use App\Http\Resources\UserResource;
 use App\Models\NormalUser;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 class AuthController extends Controller
@@ -16,10 +17,10 @@ public function register(Request $request)
     {
         
         $incomingFields = $request->validate([
-            'name' => ['required', 'min:2', 'max:10', Rule::unique('users', 'name'), 'alpha'],
-            'lName' => ['required', 'min:2', 'max:10', Rule::unique('users', 'lName'), 'alpha'],
-            'email' => ['required', 'email', Rule::unique('users', 'email')],
-            'password' => ['required', 'min:8', 'max:200'],
+            'name' => ['required', 'min:2', 'max:10', Rule::unique('normal_users', 'name'), 'alpha'],
+            'lName' => ['required', 'min:2', 'max:10', Rule::unique('normal_users', 'lName'), 'alpha'],
+            'email' => ['required', 'email', Rule::unique('normal_users', 'email')],
+            'password' => ['required', 'min:10', 'max:200'],
 
         ]);
 
@@ -28,7 +29,7 @@ public function register(Request $request)
 
         $user = NormalUser::create($incomingFields);
         
-        auth()->login($user);
+        
 
         return redirect('http://localhost:3000/');
     }
@@ -39,7 +40,11 @@ public function login(Request $request)
             'loginemail' => 'required',
             'loginpassword' => 'required'
         ]);
-        if (auth()->attempt(['email' => $incomingFields['loginemail'], 'password' => $incomingFields['loginpassword']])) {
+        $credentials = [
+            'email' => $request->loginemail,
+            'password' => $request->loginpassword
+        ];
+        if (Auth::guard('NormalUser')->attempt($credentials)) {
             return redirect('http://localhost:3000/');
         }
         else {
@@ -49,10 +54,6 @@ public function login(Request $request)
         
     
 }
-
-    // logout a user method
-    
-
     // get the authenticated user method
     public function user($id) {
         $user = User::find($id);

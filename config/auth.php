@@ -40,7 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-    ],
+        'NormalUser' =>[
+        'driver' => 'session',
+        'provider' => 'admins',
+    ]],
 
     /*
     |--------------------------------------------------------------------------
@@ -60,6 +63,10 @@ return [
     */
 
     'providers' => [
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\NormalUser::class,
+        ],
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
