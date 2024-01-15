@@ -160,3 +160,37 @@
     -ms-transition: 0.4s;
     -o-transition: 0.4s;
 }
+
+.sliderControl {
+    background-color: #09dbbe;
+    color: #eee;
+}
+.sliderButtons {
+    color: #eee;
+    font-weight: bold;
+}
+.sliderButtons:hover {
+    color: #09dbbe !important;
+    background-color: #fff;
+}
+.sliderButtonActive {
+    color: #09dbbe !important;
+    background-color: #fff;
+}
+
+.teamsImgs {
+    width: 84%;
+    margin: auto;
+}
+.Sliderarrows {
+    background: #1292ad;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+}
+@media(max-width: 985px) {
+    .teamsImgs {
+        width: 98%;
+        margin: auto;
+    }
+}

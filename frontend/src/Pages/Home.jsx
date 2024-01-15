@@ -4,6 +4,7 @@ import ContactUsSec from "../components/ContactUsSec"
 import Navbar from "../components/Navbar"
 import OurServSec from "../components/OurServSec"
 import Slider from "../components/Slider"
+import AboutUsSec from "../components/AboutUsSec"
 
 
     function Home()
@@ -22,6 +23,7 @@ import Slider from "../components/Slider"
             <BlogSec />
             <OurServSec />
             <ContactUsSec />
+            <AboutUsSec />
 
 
         </>
