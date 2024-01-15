@@ -53,9 +53,9 @@ public function login(Request $request)
     
 
     // get the authenticated user method
-    public function user($email) {
-
-        $user = User::find($email);
+    public function user($id) {
+        $user = User::find($id);
+        
         return response()->json($user); 
     }
 }
