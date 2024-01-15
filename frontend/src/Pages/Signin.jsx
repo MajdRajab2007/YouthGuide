@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import "./Signup.css";
 import logo from "../images/logo.png";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocalState } from "../until/useLocalStorage";
 
 function Signin() {
-    
+    const [email, setEmail] = useState("")
+    const [currentPass, setCurrentPass] = useState("")
+    const [ValidPass, setValidPass] = useState("")
 useEffect(() => {
 
 },[])
@@ -23,12 +25,15 @@ useEffect(() => {
                             method="POST"
                             onSubmit={() => {
                                 window.localStorage.setItem("jwt", "jwt")
+
+
                             }}
                         >
                             <img
                                 className="mt-5 logoAct "
                                 src={logo}
                                 alt="sada"
+
                             />
                             <h3  className="text-center mb-5">تسجيل الدخول</h3>
 
@@ -42,6 +47,7 @@ useEffect(() => {
                                     type="email"
                                     placeholder="البريد الإلكتروني"
                                     className="form-control"
+                                    onChange={(e) => setEmail(e.target.value)}
                                 />
                                 <p
                                     style={{ color: "red", fontWeight: "bold" }}
@@ -60,6 +66,7 @@ useEffect(() => {
                                     maxLength="28"
                                     placeholder="كلمة السر"
                                     className="form-control"
+                                    onChange={(e) => setCurrentPass(e.target.value)}
                                 />
                                 <p
                                     style={{ color: "red", fontWeight: "bold" }}
@@ -70,7 +77,11 @@ useEffect(() => {
                             <div className="d-grid">
                                 <input className="btn btn-youth" type="submit" value="تسجيل الدخول"/>
                             </div>
-                            <p className="text-left mt-2">
+                            <p
+                            //  onClick={() => {
+                            //     fetch(`http://127.0.0.1:8000/users/${email}`).then((res) => res.json()).then((data) => localStorage.setItem("data", data))
+                            // }}
+                             className="text-left mt-2">
                                 لا تملك حساب؟
                                 <Link className="me-2" to="/signup">
                                     إنشاء حساب جديد
