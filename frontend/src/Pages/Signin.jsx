@@ -79,10 +79,7 @@ useEffect(() => {
                             </div>
                             <p
                              onClick={() => {
-                                fetch(`http://127.0.0.1:8000/users/${email}`,
-                                {
-                                    
-                                }).then((res) => res.json()).then((data) => localStorage.setItem("data", data))
+                                fetch(`http://127.0.0.1:8000/api/users/${email}`).then((res) => res.json()).then((data) => console.log(data.data.name))
                             }}
                              className="text-left mt-2">
                                 لا تملك حساب؟
