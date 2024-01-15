@@ -78,9 +78,12 @@ useEffect(() => {
                                 <input className="btn btn-youth" type="submit" value="تسجيل الدخول"/>
                             </div>
                             <p
-                            //  onClick={() => {
-                            //     fetch(`http://127.0.0.1:8000/users/${email}`).then((res) => res.json()).then((data) => localStorage.setItem("data", data))
-                            // }}
+                             onClick={() => {
+                                fetch(`http://127.0.0.1:8000/users/${email}`,
+                                {
+                                    
+                                }).then((res) => res.json()).then((data) => localStorage.setItem("data", data))
+                            }}
                              className="text-left mt-2">
                                 لا تملك حساب؟
                                 <Link className="me-2" to="/signup">

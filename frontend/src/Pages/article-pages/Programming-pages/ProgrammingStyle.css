@@ -1,0 +1,83 @@
+.lessonText {
+    background: linear-gradient(to left, #09dbbe, #1292ad);
+    width: 80%;
+    color: #eee;
+    border: 2px solid #eee;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 14px;
+    line-height: 4;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+    box-shadow: 4px 4px 51px 5px #eee;
+}
+
+.lessonText:hover {
+    border: 2px solid #09dbbe;
+    width: 90%;
+    cursor:grab;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+.cardLesson {
+    margin-top: 40px;
+    justify-content: center;
+    display: flex;
+
+}
+.showMore {
+    background: linear-gradient(to left, #09dbbe, #1292ad);
+    width: 20%;
+    margin: 30px auto;
+    color: #eee;
+    font-weight: bold;
+}
+.lessonHead {
+    padding: 12px 10px;
+    text-align: center;
+}
+.whous {
+    font-size: 27px;
+}
+.lesson-image {
+    width: 100%;
+    border-radius: 32px 32px 0 0;
+    -webkit-border-radius: 32px 32px 0 0;
+    -moz-border-radius: 32px 32px 0 0;
+    -ms-border-radius: 32px 32px 0 0;
+    -o-border-radius: 32px 32px 0 0;
+}
+.lesson-card {
+    width: 45%;
+    margin: auto;
+}
+.lesson-desc {
+    background: linear-gradient(to left, #09dbbe, #1292ad);
+    color: #eee;
+    font-weight: bold;
+    padding: 20px 32px;
+    border-radius: 0 0 32px 32px;
+    -webkit-border-radius: 0 0 32px 32px;
+    -moz-border-radius: 0 0 32px 32px;
+    -ms-border-radius: 0 0 32px 32px;
+    -o-border-radius: 0 0 32px 32px;
+}
+.lesson-title {
+    text-align: center;
+}
+@media (max-width: 800px) {
+    .lesson-card {
+        width: 80%;
+    }
+}

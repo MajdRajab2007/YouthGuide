@@ -28,9 +28,9 @@ function Programming() {
                         <div className="row langProgContainer">
 
                             <div className="col-12 col-md-4 col-lg-4">
-                                <div className="langBox">
+                                <Link to="/programming/html" className="langBox">
                                         HTML
-                                </div>
+                                </Link>
                             </div>
                             <div className="col-12 col-md-4 col-lg-4">
                                 <div className="langBox">

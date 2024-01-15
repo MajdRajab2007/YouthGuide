@@ -39,8 +39,6 @@ Route::middleware(['cors'])->prefix('auth')->group(function () {
             }
         }
     );
-
-
     Route::get('user/', function (Request $request) {
 
         $users = User::all();
@@ -48,3 +46,4 @@ Route::middleware(['cors'])->prefix('auth')->group(function () {
         return response()->json($users);
     });
 });
+

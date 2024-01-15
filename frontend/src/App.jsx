@@ -14,6 +14,7 @@ import Aticles from './Pages/Articles.jsx';
 import Programming from './Pages/Programming.jsx';
 import { useLocalState } from './until/useLocalStorage.jsx';
 import PrivateRoute from './private-route/private-route.jsx';
+import HtmlPage from './Pages/article-pages/Programming-pages/Html-Page.jsx';
 
 
 function App() {
@@ -55,6 +56,11 @@ function App() {
             <Route path='/programming' element={
                   <PrivateRoute>
                   <Programming />
+              </PrivateRoute>
+            } />
+            <Route path='/programming/html' element={
+                  <PrivateRoute>
+                  <HtmlPage />
               </PrivateRoute>
             } />
             </Routes>
