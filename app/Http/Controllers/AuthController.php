@@ -60,4 +60,21 @@ public function login(Request $request)
         
         return response()->json($user); 
     }
+
+    public function show(Request $request) {
+        $user = User::where('email', $request->email)->first();
+
+        if ($user) {
+            return response()->json([
+                'status' => true,
+                'message' => 'User found successfully.',
+                'data' => $user
+            ]);
+        } else {
+            return response()->json([
+                'status' => false,
+                'message' => 'User not found.',
+            ]);
+        }
+    }
 }

@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PostsController;
 use App\Models\User;
 
 /*
@@ -23,29 +24,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // });
 
 
-Route::get(
-    'users/{email}',
-    function (Request $request) {
-        $user = User::where('email', $request->email)->first();
+Route::get('users/{email}',[AuthController::class,'show']);
 
-        if ($user) {
-            return response()->json([
-                'status' => true,
-                'message' => 'User found successfully.',
-                'data' => $user
-            ]);
-        } else {
-            return response()->json([
-                'status' => false,
-                'message' => 'User not found.',
-            ]);
-        }
-    }
-);
+//find by tag name(video / graphic...)
+Route::get('posts/tag/{tag_name}',[PostsController::class,'showByTag']);
 
-Route::get('user/', function (Request $request) {
+//get post by tag and coding language
+Route::get('posts/tag_lang/{tag_name}/{coding_language_name}',[PostsController::class,'showByTagAndLanguage']);
 
-    $users = User::all();
-
-    return response()->json($users);
-});
+Route::get('posts/{id}',[PostsController::class,'showById']);

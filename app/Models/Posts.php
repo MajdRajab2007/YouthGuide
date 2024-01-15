@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
-use Backpack\CRUD\app\Models\Traits\CrudTrait;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Tag;
+use App\Models\Team;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+
 
 class Posts extends Model
 {
@@ -14,9 +17,20 @@ class Posts extends Model
         'title',
         'body',
         'image',
-        'label'
+        'tag_name',
+        'team_name',
+        'coding_language_name'
     ];
     use CrudTrait;
     use HasFactory;
     
+    public function coding_language(){
+        return $this->belongsTo(CodingLanguage::class);
+    }
+    public function tag(){
+        return $this->belongsTo(Tag::class);
+    }
+    public function team_member(){
+        return $this->belongsTo(Team::class);
+    }
 }

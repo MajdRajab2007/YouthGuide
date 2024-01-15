@@ -91,15 +91,53 @@ class PostsCrudController extends CrudController
             'withFiles' => true
             ]);
 
-            CRUD::field([   // select_from_array
-                'name'        => 'label',
-                'label'       => "label",
-                'type'        => 'select_from_array',
-                'options'     => ['coding' => 'Coding', 'video' => 'Video Editing','graphic' => 'Graphic Design','buisness' => 'Buisness Management'],
-                'allows_null' => false,
-                
-                // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
-            ]);
+            CRUD::field([  // Select
+                'label'     => "Tag",
+                'type'      => 'select',
+                'name'      => 'tag_name', // the db column for the foreign key
+             
+                // optional
+                // 'entity' should point to the method that defines the relationship in your Model
+                // defining entity will make Backpack guess 'model' and 'attribute'
+                'entity'    => 'tag',
+             
+                // optional - manually specify the related model and attribute
+                'model'     => "App\Models\Tag", // related model
+                'attribute' => 'name', // foreign key attribute that is shown to user
+             
+             ]);
+            
+            CRUD::field([  // Select
+                'label'     => "Coding Language",
+                'type'      => 'select',
+                'name'      => 'coding_language_name', // the db column for the foreign key
+             
+                // optional
+                // 'entity' should point to the method that defines the relationship in your Model
+                // defining entity will make Backpack guess 'model' and 'attribute'
+                'entity'    => 'coding_language',
+             
+                // optional - manually specify the related model and attribute
+                'model'     => "App\Models\CodingLanguage", // related model
+                'attribute' => 'name', // foreign key attribute that is shown to user
+             
+             ]);
+
+             CRUD::field([  // Select
+                'label'     => "Post Creator",
+                'type'      => 'select',
+                'name'      => 'team_name', // the db column for the foreign key
+             
+                // optional
+                // 'entity' should point to the method that defines the relationship in your Model
+                // defining entity will make Backpack guess 'model' and 'attribute'
+                'entity'    => 'team_member',
+             
+                // optional - manually specify the related model and attribute
+                'model'     => "App\Models\Team", // related model
+                'attribute' => 'name', // foreign key attribute that is shown to user
+             
+             ]);
             
             
 
