@@ -104,7 +104,7 @@ class PostsCrudController extends CrudController
                 // optional - manually specify the related model and attribute
                 'model'     => "App\Models\Tag", // related model
                 'attribute' => 'name', // foreign key attribute that is shown to user
-             
+                'pivot' => true,
              ]);
             
             CRUD::field([  // Select

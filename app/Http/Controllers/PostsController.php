@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PostsController extends Controller
 {
     public function showByTag(Request $request){
-
+        
         $posts = Posts::where('tag_name',$request->tag_name)->get();
 
 
@@ -62,6 +62,12 @@ public function showByTagAndLanguage(Request $request){
 
 public function showById(Request $request){
     $posts = Posts::where('id',$request->id)->first();
+
+    return response()->json($posts);
+}
+
+public function search(Request $request){
+    $posts = Posts::where('title','LIKE',$request->search)->get();
 
     return response()->json($posts);
 }

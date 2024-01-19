@@ -33,3 +33,5 @@ Route::get('posts/tag/{tag_name}',[PostsController::class,'showByTag']);
 Route::get('posts/tag_lang/{tag_name}/{coding_language_name}',[PostsController::class,'showByTagAndLanguage']);
 
 Route::get('posts/{id}',[PostsController::class,'showById']);
+
+Route::get('posts/search/{search}',[PostsController::class,'search']);
