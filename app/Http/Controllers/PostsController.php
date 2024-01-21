@@ -71,10 +71,4 @@ public function search(Request $request){
 
     return response()->json($posts);
 }
-
-public function getImage(Request $request){
-    $url = $request->url;
-
-    return response()->file($url);
-}
 }

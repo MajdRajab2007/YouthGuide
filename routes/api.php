@@ -35,5 +35,3 @@ Route::get('posts/tag_lang/{tag_name}/{coding_language_name}',[PostsController::
 Route::get('posts/{id}',[PostsController::class,'showById']);
 
 Route::get('posts/search/{search}',[PostsController::class,'search']);
-
-Route::get('posts/image/{url}',[PostsController::class,'getImage']);
