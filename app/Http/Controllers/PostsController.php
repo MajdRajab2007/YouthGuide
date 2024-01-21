@@ -157,4 +157,33 @@ public function showByTagAndDesignType(Request $request){
         ]);
 }
 }
+public function showByTagAndDesignAndId(Request $request){
+
+    $posts = Posts::
+    where('tag_name',$request->tag_name)
+    ->where('design_type_name',$request->design_type)
+    ->where('id',$request->id)
+    ->get();
+
+
+
+
+    if ($posts) {
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Post found successfully.',
+            'data' => $posts
+        ]);
+
+    } else {
+
+        return response()->json([
+
+            'status' => false,
+            'message' => 'Post not found.',
+
+        ]);
+}
+}
 }

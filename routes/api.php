@@ -44,5 +44,6 @@ Route::get('posts/search/{search}',[PostsController::class,'search']);
 Route::get('languages/',[CodingLanguageController::class,'showCodingLanguages']);
 
 Route::get('posts/tag_design/{tag_name}/{design_type}',[PostsController::class,'showByTagAndDesignType']);
+Route::get('posts/tag_design/{tag_name}/{design_type}/{id}',[PostsController::class,'showByTagAndDesignAndId']);
 
 
