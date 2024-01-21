@@ -30,6 +30,33 @@ class PostsController extends Controller
             ]);
     }
 }
+public function showByTagId(Request $request){
+    $posts = Posts::
+    where('tag_name',$request->tag_name)
+    ->where('id',$request->id)
+    ->get();
+
+
+
+
+    if ($posts) {
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Post found successfully.',
+            'data' => $posts
+        ]);
+
+    } else {
+
+        return response()->json([
+
+            'status' => false,
+            'message' => 'Post not found.',
+
+        ]);
+}
+}
 
 public function showByTagAndLanguage(Request $request){
 
@@ -98,5 +125,36 @@ public function search(Request $request){
     $posts = Posts::where('title','LIKE',$request->search)->get();
 
     return response()->json($posts);
+}
+
+
+
+public function showByTagAndDesignType(Request $request){
+
+    $posts = Posts::
+    where('tag_name',$request->tag_name)
+    ->where('design_type_name',$request->design_type)
+    ->get();
+
+
+
+
+    if ($posts) {
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Post found successfully.',
+            'data' => $posts
+        ]);
+
+    } else {
+
+        return response()->json([
+
+            'status' => false,
+            'message' => 'Post not found.',
+
+        ]);
+}
 }
 }

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('coding_languages', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('src');
             $table->timestamps();
         });
     }

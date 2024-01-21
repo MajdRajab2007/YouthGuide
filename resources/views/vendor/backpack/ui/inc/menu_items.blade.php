@@ -7,3 +7,4 @@
 <x-backpack::menu-item title="Normal users" icon="la la-question" :link="backpack_url('normal-user')" />
 <x-backpack::menu-item title="Coding languages" icon="la la-question" :link="backpack_url('coding-language')" />
 <x-backpack::menu-item title="Teams" icon="la la-question" :link="backpack_url('team')" />
+<x-backpack::menu-item title="Design types" icon="la la-question" :link="backpack_url('design-type')" />

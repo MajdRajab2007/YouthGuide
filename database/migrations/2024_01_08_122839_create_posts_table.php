@@ -17,10 +17,12 @@ return new class extends Migration
             $table->timestamps();
             $table->string('title');
             $table->text('body');
+            $table->text('review');
             $table->foreignId('tag_name');
             $table->foreignId('team_name');
             $table->string('image')->nullable();
-            $table->foreignId('coding_language_name');
+            $table->foreignId('coding_language_name')->nullable();
+            $table->foreignId('design_type_name')->nullable();
 
 
         });

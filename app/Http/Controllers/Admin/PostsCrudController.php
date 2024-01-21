@@ -84,6 +84,7 @@ class PostsCrudController extends CrudController
         CRUD::setValidation(PostsRequest::class);
         CRUD::field('title')->type('text');
         CRUD::field('body')->type('textarea');
+        CRUD::field('review')->type('text');
         CRUD::field([   // Upload
             'name'      => 'image',
             'label'     => 'Image',
@@ -122,6 +123,23 @@ class PostsCrudController extends CrudController
                 'attribute' => 'name', // foreign key attribute that is shown to user
              
              ]);
+
+             CRUD::field([  // Select
+                'label'     => "Design Type",
+                'type'      => 'select',
+                'name'      => 'design_type_name', // the db column for the foreign key
+             
+                // optional
+                // 'entity' should point to the method that defines the relationship in your Model
+                // defining entity will make Backpack guess 'model' and 'attribute'
+                'entity'    => 'design_type',
+             
+                // optional - manually specify the related model and attribute
+                'model'     => "App\Models\DesignType", // related model
+                'attribute' => 'name', // foreign key attribute that is shown to user
+             
+             ]);
+
 
              CRUD::field([  // Select
                 'label'     => "Post Creator",

@@ -19,7 +19,9 @@ class Posts extends Model
         'image',
         'tag_name',
         'team_name',
-        'coding_language_name'
+        'coding_language_name',
+        'design_type_name',
+        'review',
     ];
     use CrudTrait;
     use HasFactory;
@@ -32,5 +34,8 @@ class Posts extends Model
     }
     public function team_member(){
         return $this->belongsTo(Team::class);
+    }
+    public function design_type(){
+        return $this->belongsTo(DesignType::class);
     }
 }
