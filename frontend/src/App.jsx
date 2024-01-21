@@ -12,9 +12,16 @@ import ContactUs from './Pages/ContactUs.jsx';
 import OurServ from './Pages/OurServ.jsx';
 import Aticles from './Pages/Articles.jsx';
 import Programming from './Pages/Programming.jsx';
-import { useLocalState } from './until/useLocalStorage.jsx';
 import PrivateRoute from './private-route/private-route.jsx';
 import HtmlPage from './Pages/article-pages/Programming-pages/Html-Page.jsx';
+import CssPage from './Pages/article-pages/Programming-pages/Css-Page.jsx';
+import JsPage from './Pages/article-pages/Programming-pages/Js-Page.jsx';
+import CppPage from './Pages/article-pages/Programming-pages/Cpp-Page.jsx';
+import PythonPage from './Pages/article-pages/Programming-pages/Python-Page.jsx';
+import PhpPage from './Pages/article-pages/Programming-pages/Php-Page.jsx';
+import LeaderShip from './Pages/LeaderShip.jsx';
+import BullHorn from './Pages/BullHorn.jsx';
+import DesigningandVideoEditing from './Pages/Designing-and-VideoEditing.jsx';
 
 
 function App() {
@@ -45,7 +52,7 @@ function App() {
                   <OurServ />
               </PrivateRoute>
             } />
-            <Route path='/articles' element={
+            <Route path='/blog' element={
                   <PrivateRoute>
                   <Aticles />
               </PrivateRoute>
@@ -61,6 +68,46 @@ function App() {
             <Route path='/programming/html' element={
                   <PrivateRoute>
                   <HtmlPage />
+              </PrivateRoute>
+            } />
+            <Route path='/programming/css' element={
+                  <PrivateRoute>
+                  <CssPage />
+              </PrivateRoute>
+            } />
+            <Route path='/programming/javascript' element={
+                  <PrivateRoute>
+                  <JsPage />
+              </PrivateRoute>
+            } />
+            <Route path='/programming/c++' element={
+                  <PrivateRoute>
+                  <CppPage />
+              </PrivateRoute>
+            } />
+            <Route path='/programming/python' element={
+                  <PrivateRoute>
+                  <PythonPage />
+              </PrivateRoute>
+            } />
+            <Route path='/programming/php' element={
+                  <PrivateRoute>
+                  <PhpPage />
+              </PrivateRoute>
+            } />
+            <Route path='/LeaderShip' element={
+                  <PrivateRoute>
+                  <LeaderShip />
+              </PrivateRoute>
+            } />
+            <Route path='/bullhorn' element={
+                  <PrivateRoute>
+                  <BullHorn />
+              </PrivateRoute>
+            } />
+            <Route path='/Designing-and-VideoEditing' element={
+                  <PrivateRoute>
+                  <DesigningandVideoEditing />
               </PrivateRoute>
             } />
             </Routes>

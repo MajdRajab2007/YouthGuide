@@ -1,7 +1,8 @@
+
 import { Link } from "react-router-dom";
 import logo from "../images/logo.png"
 import "./Programming.css"
-function Programming() {
+function DesigningandVideoEditing() {
 
     return (
         <>
@@ -17,7 +18,7 @@ function Programming() {
                             className="col-7"
                             style={{ display: "flex", alignItems: "center" }}
                         >
-                            <p className="whous ">البرمجة</p>
+                            <p className="whous ">التصميم والمونتاج</p>
                         </div>
                     </div>
                          </div>
@@ -28,35 +29,21 @@ function Programming() {
                         <div className="row langProgContainer">
 
                             <div className="col-12 col-md-4 col-lg-4">
-                                <Link to="/programming/html" className="langBox">
-                                        HTML
+                                <Link to="/Designing-and-VideoEditing/photoshop" className="SectioBox">
+                                        فوتوشوب
                                 </Link>
                             </div>
-                            <Link to="/programming/css" className="col-12 col-md-4 col-lg-4">
-                                <div className="langBox">
-                                        CSS
+                            <Link to="/Designing-and-VideoEditing/ui-ux" className="col-12 col-md-4 col-lg-4">
+                                <div className="SectioBox">
+                                        تصميم الواجهات الأمامية UI UX
                                 </div>
                             </Link>
-                            <Link to="/programming/javascript" className="col-12 col-md-4 col-lg-4">
-                                <div className="langBox">
-                                        JAVASCRIPT
+                            <Link to="/Designing-and-VideoEditing/video-editing" className="col-12 col-md-4 col-lg-4">
+                                <div className="SectioBox">
+                                        مونتاج فيديوهات
                                 </div>
                             </Link>
-                            <Link to="/programming/c++" className="col-12 col-md-4 col-lg-4">
-                                <div className="langBox" style={{direction:"ltr"}}>
-                                        C++
-                                </div>
-                            </Link>
-                            <Link to="/programming/python" className="col-12 col-md-4 col-lg-4">
-                                <div className="langBox">
-                                        PYTHON
-                                </div>
-                            </Link>
-                            <Link to="/programming/php" className="col-12 col-md-4 col-lg-4">
-                                <div className="langBox">
-                                        PHP
-                                </div>
-                            </Link>
+
 
                         </div>
                     </div>
@@ -64,4 +51,4 @@ function Programming() {
         </>
     )
 }
-export default Programming;
+export default DesigningandVideoEditing;

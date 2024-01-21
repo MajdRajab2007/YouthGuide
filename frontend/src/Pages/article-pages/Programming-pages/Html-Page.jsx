@@ -15,7 +15,7 @@ function HtmlPage() {
 
 
     let threeArticles = <div className="row mt-3">
-        <TopThree name="1" />
+        <TopThree name="1" section="1" />
 
 
 
@@ -25,7 +25,7 @@ function HtmlPage() {
     </div>;
     let allArticles =    <div className="row mt-5">
 
-            <AllPosts name="1" />
+            <AllPosts name="1"  section="1"/>
     </div>
 
     let [content, setContent] = useState(threeArticles)

@@ -11,6 +11,7 @@ function Signin() {
 useEffect(() => {
 
 },[])
+let myCode = "A648jdkfsjnvvXddt738yr83utrewgHGDHOIfuU9IOSDGOSDHUGSDUIHFIOoy897389uio3hrihehioH0W9Q0UR90382REMNFBZDFCBSHAGFEWY90RU89Y88t7TE2GEUIh()uIHIOHSD09FUESNFPIh8gd98AYDH09AWHNFInbUIHGAIOhd90y89dHDKsjfosauf90hsdfnsdigh9seghioasdfhioAHGIDHCSiFAHIOhiFJSDOIFHonfpouaofwihfio;ashogfsdhfkAHGIOaHBfdoisakgbs,HAFkrlbfvmhaefjlsghfdksajfhsioa;fgdoarihtgawuufsoaebtkszufrwehghsahfsopdhgbhdosgbsdkgjkjsdfjkd;lxhgsoapvmxdksM,fdfksdklaskgklfdklgnsdlgkdslgjsdogjdjgsdogjsogjdsogsdjgdsogndskaOHahHIOIOjNKLhsfmnf msakgfdmnfla;skfasjpofisakpgfospdgfaioedosdfdIOmfsdajognfkldskgmlsdkhdkKPlAkjkpfSNBKLFJSAKFKAJKhsoansjKNAKLJK';SDZ CKJSJGKDS'GJIOSUFSDLMFNJKadhijfdspjfiosahfnsdfldsikgmdspgjsdopfhsaoidhOPAKAF';FJDSPGNKDNGOPDSFHSAODBXKFHUIESBJFLNFSAGKNASHIOFKSDMFKSAHDJZOhdospghiosdjgdsklgds,jfsaiofhsa9r3u5623523793jfnkdlsfgse=-t9-=wejgnsdlkhfsa98fs8tafbkndlsgior-gopjdnvxklfgsd89f29748923ghrfea8rfy83wgru983u12ygruiwegifhewigfjdgfjshgfmhsgmhgcmnvbmxnsxbcvmsncgshvbmc9m6snbxcsncmwvsnxcmvsnxmcsvbvbsnxcbvsnbxcv4msn89bxc4mv4sn89xmc489vsvbsmnbcsmncbvsnb1v5m6snxb45smn4bwxc5mvs4n9b8xc4mv9s8nxbnc67863w45FTYSADGFYSGDEUFSUIDFSASDFSDFSDFDSFDSFSDFSD"
 
     return (
         <>
@@ -24,7 +25,7 @@ useEffect(() => {
                             action="http://127.0.0.1:8000/login"
                             method="POST"
                             onSubmit={() => {
-                                window.localStorage.setItem("jwt", "jwt")
+                                localStorage.setItem("jwt", myCode)
 
 
                             }}
@@ -80,6 +81,7 @@ useEffect(() => {
                             <p
                              onClick={() => {
                                 fetch(`http://127.0.0.1:8000/api/users/${email}`).then((res) => res.json()).then((data) => console.log(data.data.name))
+
                             }}
                              className="text-left mt-2">
                                 لا تملك حساب؟

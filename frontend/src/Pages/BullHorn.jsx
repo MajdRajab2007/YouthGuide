@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import "./ProgrammingStyle.css"
-import logo from "../../../images/logo.png"
+import "./article-pages/Programming-pages/ProgrammingStyle.css"
+import logo from "../images/logo.png"
 import { useEffect, useState } from "react";
-import desc from "../../../images/lesson.jpg"
-import TopThree from "../../../components/Topthree";
-import AllPosts from "../../../components/AllPosts";
-function PythonPage() {
+
+import TopThree from "../components/Topthree";
+import AllPosts from "../components/AllPosts";
+function BullHorn() {
 
     let [lessons, setLessons] = useState([])
     useEffect(() => {
@@ -15,7 +15,7 @@ function PythonPage() {
 
 
     let threeArticles = <div className="row mt-3">
-        <TopThree name="6" section="1"/>
+        <TopThree name="1" section="3" />
 
 
 
@@ -25,7 +25,7 @@ function PythonPage() {
     </div>;
     let allArticles =    <div className="row mt-5">
 
-            <AllPosts name="6" section="1" />
+            <AllPosts name="1" section="3" />
     </div>
 
     let [content, setContent] = useState(threeArticles)
@@ -47,7 +47,7 @@ function PythonPage() {
                             className="col-7"
                             style={{ display: "flex", alignItems: "center" }}
                         >
-                            <p className="whous ">PYTHON</p>
+                            <p className="whous ">التسويق</p>
                         </div>
                     </div>
 
@@ -61,9 +61,11 @@ function PythonPage() {
 
                 </div>
                 <Link to="/" className="btn backHome">الصفحة الرئيسية</Link>
-                         <Link to="/programming" className="btn backStep">رجوع</Link>
+                         <Link to="/blog" className="btn backStep">رجوع</Link>
 
         </>
     )
 }
-export default PythonPage;
+export default BullHorn;
+
+

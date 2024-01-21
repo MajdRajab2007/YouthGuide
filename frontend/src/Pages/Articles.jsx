@@ -64,7 +64,7 @@ function Aticles() {
                     </div>
                     <div className="col-md-6 col-lg-6 col-12 ">
 
-                          <Link to="Designing-and-VideoEditing">
+                          <Link to="/Designing-and-VideoEditing">
                           <div className="articleBox">
                                                         <h2 className="articleH2">تصميم ومونتاج</h2>
                         <img src={dAndv} alt="..." className="articleImage" />

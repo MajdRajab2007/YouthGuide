@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 function TopThree(props) {
     let [lessons, setLessons] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:8000/api/posts/tag_lang/1/${props.name}/`).then((res) => res.json()).then((data) => setLessons(data.data))
+        fetch(`http://localhost:8000/api/posts/tag_lang/${props.section}/${props.name}/`).then((res) => res.json()).then((data) => setLessons(data.data))
     },[])
 
         lessons.length = 3;

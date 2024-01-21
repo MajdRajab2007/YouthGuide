@@ -32,3 +32,28 @@
     font-size: 34px;
 
 }
+.SectioBox {
+    width: 250px;
+    height: 250px;
+    padding: 20px 35px;
+    color: #eee;
+    font-weight: bold;
+    font-size: 24px;
+    background-color: #09dbbe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    margin: 40px auto;
+    border: 2px solid #09dbbe;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    box-shadow: 2px 5px 16px 0px black;
+}

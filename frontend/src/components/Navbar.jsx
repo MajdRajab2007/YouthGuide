@@ -56,7 +56,7 @@ function Navbar() {
                                 style={{color:"#eee"}}
                                     className="nav-link active"
                                     aria-current="page"
-                                    to="/articles"
+                                    to="/blog"
                                 >
                                       المدونة
                                 </Link>
@@ -81,20 +81,23 @@ function Navbar() {
                                       من نحن؟
                                 </Link>
                             </li>
-
-
-
-                        </ul>
-                    </div>
-                                <Link
+                            <li className="nav-item navLink">
+                                  <Link
                                 onClick={() => localStorage.clear()}
-                                className="nav-item logout btn btn-danger"
-                                style={{color:"#eee"}}
+                                className="nav-item logout "
+
                                     aria-current="page"
                                     to="/signin"
                                 >
                                         تسجيل الخروج
                                 </Link>
+                            </li>
+
+
+
+                        </ul>
+                    </div>
+
                 </div>
             </nav>
         </>
