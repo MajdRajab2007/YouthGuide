@@ -12,14 +12,14 @@ function TopThree(props) {
         let allthings = lessons.map((lesson) => {
             return (
                 <>
-                    <div key={lesson.id} className="cardLesson col-lg-4 col-md-6 col-12">
+                    <Link to={`/blog/${lesson.id}`} key={lesson.id} className="cardLesson col-lg-4 col-md-6 col-12">
 
                     <div className="lessonText">
                     <h2 className="lessonHead">{lesson.title}</h2>
 
-                             {lesson.body}
+                             {lesson.review}
                            </div>
-                     </div>
+                     </Link>
                 </>
             )
         })

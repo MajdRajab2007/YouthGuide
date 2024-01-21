@@ -22,7 +22,7 @@ class PostsCrudController extends CrudController
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
-     * 
+     *
      * @return void
      */
 //     public function create()
@@ -59,7 +59,7 @@ class PostsCrudController extends CrudController
 
     /**
      * Define what happens when the List operation is loaded.
-     * 
+     *
      * @see  https://backpackforlaravel.com/docs/crud-operation-list-entries
      * @return void
      */
@@ -75,7 +75,7 @@ class PostsCrudController extends CrudController
 
     /**
      * Define what happens when the Create operation is loaded.
-     * 
+     *
      * @see https://backpackforlaravel.com/docs/crud-operation-create
      * @return void
      */
@@ -85,6 +85,7 @@ class PostsCrudController extends CrudController
         CRUD::field('title')->type('text');
         CRUD::field('body')->type('textarea');
         CRUD::field('review')->type('text');
+        CRUD::field('team_name')->type('text');
         CRUD::field([   // Upload
             'name'      => 'image',
             'label'     => 'Image',
@@ -96,68 +97,54 @@ class PostsCrudController extends CrudController
                 'label'     => "Tag",
                 'type'      => 'select',
                 'name'      => 'tag_name', // the db column for the foreign key
-             
+
                 // optional
                 // 'entity' should point to the method that defines the relationship in your Model
                 // defining entity will make Backpack guess 'model' and 'attribute'
                 'entity'    => 'tag',
-             
+
                 // optional - manually specify the related model and attribute
                 'model'     => "App\Models\Tag", // related model
                 'attribute' => 'name', // foreign key attribute that is shown to user
                 'pivot' => true,
              ]);
-            
+
             CRUD::field([  // Select
                 'label'     => "Coding Language",
                 'type'      => 'select',
                 'name'      => 'coding_language_name', // the db column for the foreign key
-             
+
                 // optional
                 // 'entity' should point to the method that defines the relationship in your Model
                 // defining entity will make Backpack guess 'model' and 'attribute'
                 'entity'    => 'coding_language',
-             
+
                 // optional - manually specify the related model and attribute
                 'model'     => "App\Models\CodingLanguage", // related model
                 'attribute' => 'name', // foreign key attribute that is shown to user
-             
+
              ]);
 
              CRUD::field([  // Select
                 'label'     => "Design Type",
                 'type'      => 'select',
                 'name'      => 'design_type_name', // the db column for the foreign key
-             
+
                 // optional
                 // 'entity' should point to the method that defines the relationship in your Model
                 // defining entity will make Backpack guess 'model' and 'attribute'
                 'entity'    => 'design_type',
-             
+
                 // optional - manually specify the related model and attribute
                 'model'     => "App\Models\DesignType", // related model
                 'attribute' => 'name', // foreign key attribute that is shown to user
-             
+
              ]);
 
 
-             CRUD::field([  // Select
-                'label'     => "Post Creator",
-                'type'      => 'select',
-                'name'      => 'team_name', // the db column for the foreign key
-             
-                // optional
-                // 'entity' should point to the method that defines the relationship in your Model
-                // defining entity will make Backpack guess 'model' and 'attribute'
-                'entity'    => 'team_member',
-             
-                // optional - manually specify the related model and attribute
-                'model'     => "App\Models\Team", // related model
-                'attribute' => 'name', // foreign key attribute that is shown to user
-             
-             ]);
-            
-            
+
+
+
 
         /**
          * Fields can be defined using the fluent syntax:
@@ -167,7 +154,7 @@ class PostsCrudController extends CrudController
 
     /**
      * Define what happens when the Update operation is loaded.
-     * 
+     *
      * @see https://backpackforlaravel.com/docs/crud-operation-update
      * @return void
      */
