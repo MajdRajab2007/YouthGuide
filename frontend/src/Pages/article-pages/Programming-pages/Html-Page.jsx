@@ -1,31 +1,23 @@
 import { Link } from "react-router-dom";
 import "./ProgrammingStyle.css"
 import logo from "../../../images/logo.png"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import desc from "../../../images/lesson.jpg"
+import TopThree from "../../../components/Topthree";
+import AllPosts from "../../../components/AllPosts";
 function HtmlPage() {
 
+    let [lessons, setLessons] = useState([])
+    useEffect(() => {
+        fetch("http://localhost:8000/api/posts/tag_lang/1/1/").then((res) => res.json()).then((data) => setLessons(data.data))
+    },[])
+
+
+
     let threeArticles = <div className="row mt-3">
-                                    <div className="cardLesson col-lg-4 col-md-6 col-12">
+        <TopThree name="1" />
 
-<div className="lessonText">
-    <h2 className="lessonHead">this is articale</h2>
 
-يقوم فريق دليل الشباب بتقديم دورات تدريبية مجانية باللغة العربية على منصة يوتيوب
-    </div>                            </div>
-<div className="cardLesson col-lg-4 col-md-6 col-12">
-
-<div className="lessonText">
-<h2 className="lessonHead">this is articale</h2>
-يوجد لدينا أيضاً خدمة المساعدة بتقديم خارطة التعلم لأكثر من 20 مجال برمجي
-    </div>                            </div>
-<div className="cardLesson col-lg-4 col-md-6 col-12">
-
-<div className="lessonText">
-<h2 className="lessonHead">this is articale</h2>
-
-من الخدمات التي يقدمها فريق دليل الشباب أيضاً هي كتابة مقالات عن مواضيع تقنية متعددة
-    </div>                            </div>
 
     <button onClick={() => setContent(allArticles)} className="showMore col-lg-4 col-md-6 col-12 btn">
             عرض المزيد
@@ -33,51 +25,8 @@ function HtmlPage() {
     </div>;
     let allArticles =    <div className="row mt-5">
 
-        <div className="col-12">
-          <div className=" lesson-card mb-5">
-         <img className="lesson-image" src={desc} alt="..." />
-         <h2  className="lesson-title">تعلم مبادئ لغة <span style={{direction:"ltr"}}>++C</span></h2>
-         <p className="lesson-desc">لغة جميلة تهدف إلى خلق المهارات البرمجية عند المبرمج الذي يبرمج برامج مفيدة برمجة المنطق العام البرمجي في عالم البرمجيات الذي يبرمج برنامجنا</p>
-              </div>
-     </div>
-        <div className="col-12">
-          <div className=" lesson-card mb-5">
-         <img className="lesson-image" src={desc} alt="..." />
-         <h2  className="lesson-title">تعلم مبادئ لغة <span style={{direction:"ltr"}}>++C</span></h2>
-         <p className="lesson-desc">لغة جميلة تهدف إلى خلق المهارات البرمجية عند المبرمج الذي يبرمج برامج مفيدة برمجة المنطق العام البرمجي في عالم البرمجيات الذي يبرمج برنامجنا</p>
-              </div>
-     </div>
-        <div className="col-12">
-          <div className=" lesson-card mb-5">
-         <img className="lesson-image" src={desc} alt="..." />
-         <h2  className="lesson-title">تعلم مبادئ لغة <span style={{direction:"ltr"}}>++C</span></h2>
-         <p className="lesson-desc">لغة جميلة تهدف إلى خلق المهارات البرمجية عند المبرمج الذي يبرمج برامج مفيدة برمجة المنطق العام البرمجي في عالم البرمجيات الذي يبرمج برنامجنا</p>
-              </div>
-     </div>
-        <div className="col-12">
-          <div className=" lesson-card mb-5">
-         <img className="lesson-image" src={desc} alt="..." />
-         <h2  className="lesson-title">تعلم مبادئ لغة <span style={{direction:"ltr"}}>++C</span></h2>
-         <p className="lesson-desc">لغة جميلة تهدف إلى خلق المهارات البرمجية عند المبرمج الذي يبرمج برامج مفيدة برمجة المنطق العام البرمجي في عالم البرمجيات الذي يبرمج برنامجنا</p>
-              </div>
-     </div>
-        <div className="col-12">
-          <div className=" lesson-card mb-5">
-         <img className="lesson-image" src={desc} alt="..." />
-         <h2  className="lesson-title">تعلم مبادئ لغة <span style={{direction:"ltr"}}>++C</span></h2>
-         <p className="lesson-desc">لغة جميلة تهدف إلى خلق المهارات البرمجية عند المبرمج الذي يبرمج برامج مفيدة برمجة المنطق العام البرمجي في عالم البرمجيات الذي يبرمج برنامجنا</p>
-              </div>
-     </div>
-        <div className="col-12">
-          <div className=" lesson-card mb-5">
-         <img className="lesson-image" src={desc} alt="..." />
-         <h2  className="lesson-title">تعلم مبادئ لغة <span style={{direction:"ltr"}}>++C</span></h2>
-         <p className="lesson-desc">لغة جميلة تهدف إلى خلق المهارات البرمجية عند المبرمج الذي يبرمج برامج مفيدة برمجة المنطق العام البرمجي في عالم البرمجيات الذي يبرمج برنامجنا</p>
-              </div>
-     </div>
-
-
-</div>
+            <AllPosts name="1" />
+    </div>
 
     let [content, setContent] = useState(threeArticles)
 

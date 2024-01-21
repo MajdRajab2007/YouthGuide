@@ -31,6 +31,8 @@ Route::get('posts/tag/{tag_name}',[PostsController::class,'showByTag']);
 
 //get post by tag and coding language
 Route::get('posts/tag_lang/{tag_name}/{coding_language_name}',[PostsController::class,'showByTagAndLanguage']);
+Route::get('posts/tag_lang/{tag_name}/{coding_language_name}/{id}',[PostsController::class,'showByTagAndLanguageAndId']);
+
 
 Route::get('posts/{id}',[PostsController::class,'showById']);
 
