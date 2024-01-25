@@ -1,7 +1,17 @@
 .teamLogo {
-    padding: 10%;
+    padding: 5%;
     width: 70px;
     height: 70px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.teamLogo:hover {
+    padding: 0%;
+
+
 }
 .logout {
     margin-left: 10px;
@@ -21,10 +31,26 @@
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+.navLink:not(:last-child) {
+    border: 1px solid #09dbbe;
+}
+.navLink:hover:not(:last-child)  {
+    background-color: #eee;
+
+}
+.navLink:hover:not(:last-child) a {
+   color: #09dbbe !important;
+
 }
 .navLink:last-child {
     position: absolute;
-    left: 0;
+    left: 8%;
     background-color: #dc3545;
     display: flex;
     justify-content: center;
@@ -47,10 +73,11 @@
 .navLink:last-child:hover a {
     color: #dc3545 ;
 }
-@media (max-width: 1017px) {
+@media (max-width: 1145px) {
     .navLink:last-child {
         position: relative;
         width: 50px;
+        left: 0%;
     }
 }
 .theNavbar {

@@ -21,7 +21,7 @@ function Navbar() {
         <>
             <nav  className={navbar ? "navbar theNavbar fixed-top navbar-expand-lg active" : "navbar theNavbar fixed-top navbar-expand-lg"}>
                 <div className="container">
-                    <Link className="navbar-brand" to="/">
+                    <Link className=" " to="/">
                         <img className="teamLogo" src={navbar ? whiteLogo : logo} alt="logo" />
                     </Link>
                     <button
@@ -43,7 +43,7 @@ function Navbar() {
 
                             <li className="nav-item navLink">
                                 <Link
-                                    className="nav-link active"
+                                    className="nav-link "
                                     aria-current="page"
                                     to="/our-services"
                                     style={{color:"#eee"}}
@@ -54,7 +54,7 @@ function Navbar() {
                             <li className="nav-item navLink">
                                 <Link
                                 style={{color:"#eee"}}
-                                    className="nav-link active"
+                                    className="nav-link "
                                     aria-current="page"
                                     to="/blog"
                                 >
@@ -64,7 +64,7 @@ function Navbar() {
                             <li className="nav-item navLink">
                                 <Link
                                 style={{color:"#eee"}}
-                                    className="nav-link active"
+                                    className="nav-link "
                                     aria-current="page"
                                     to="/contact-us"
                                 >
@@ -74,7 +74,7 @@ function Navbar() {
                             <li className="nav-item navLink">
                                 <Link
                                 style={{color:"#eee"}}
-                                    className="nav-link active"
+                                    className="nav-link "
                                     aria-current="page"
                                     to="/about-us"
                                 >

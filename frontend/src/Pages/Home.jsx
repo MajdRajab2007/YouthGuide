@@ -5,6 +5,8 @@ import Navbar from "../components/Navbar"
 import OurServSec from "../components/OurServSec"
 import Slider from "../components/Slider"
 import AboutUsSec from "../components/AboutUsSec"
+import Sponsers from "../components/Sponsers"
+import Footer from "../components/Footer"
 
 
     function Home()
@@ -15,7 +17,7 @@ import AboutUsSec from "../components/AboutUsSec"
     //     }
     // }, [])
 
-  
+
 
 
     return (
@@ -26,6 +28,9 @@ import AboutUsSec from "../components/AboutUsSec"
             <OurServSec />
             <ContactUsSec />
             <AboutUsSec />
+            <Sponsers />
+            <Footer />
+
 
 
         </>

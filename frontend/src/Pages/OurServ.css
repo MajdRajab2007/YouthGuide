@@ -16,7 +16,8 @@
 .cardServ:hover {
     width: 100%;
     transition: 0.5s;
-    padding: 80px;
+    /* padding: 80px; */
+    margin-bottom: 30px;
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
     -ms-transition: 0.5s;
