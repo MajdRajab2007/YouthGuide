@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 
 function AllPosts(props) {
@@ -10,13 +11,13 @@ function AllPosts(props) {
     let allPosts =   lessons.map((lesson) => {
         return (
             <>
-                 <div className="col-12">
+                 <Link to={`/blog/${lesson.id}`} className="col-12">
   <div className=" lesson-card mb-5">
  <img className="lesson-image" src={`http://localhost:8000/storage/${lesson.image}`} alt="..." />
  <h2  className="lesson-title"> <span >{lesson.title}</span></h2>
  <p className="lesson-desc">{lesson.body}</p>
       </div>
- </div>
+ </Link>
             </>
         )
     })

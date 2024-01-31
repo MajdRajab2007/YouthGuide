@@ -1,0 +1,75 @@
+.Lesson-style-container {
+    background-color: #1292ad;
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+.backstepLesson {
+    top: 3% !important;
+    left: 6% !important;
+    background-color: #eee;
+    color: #1292ad;
+}
+.lesson-body {
+
+    width: 70%;
+    margin:auto;
+    padding: 30px 50px;
+    background-color: #eee;
+    border-radius: 23px;
+    -webkit-border-radius: 23px;
+    -moz-border-radius: 23px;
+    -ms-border-radius: 23px;
+    -o-border-radius: 23px;
+}
+.lesson-title {
+    background: linear-gradient(to right, #09dbbe, #1292ad);
+    padding: 16px;
+    color: #eee;
+    box-shadow: 4px 4px 12px black;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    margin-bottom: 50px;
+}
+.lesson-disc {
+    font-size: 24px;
+    font-weight: 500;
+}
+.lesson-author-name {
+    color: #09dbbe;
+    background-color: #1292ad;
+    width: fit-content;
+    padding: 6px 10px;
+    color: #eee;
+    position: relative;
+    margin-top: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    top: 20px;
+    border-radius: 12px;
+    right: 0px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+@media (max-width:992px) {
+    .lesson-body {
+        width: 95%;
+    }
+    .lesson-disc {
+        font-size: 20px;
+    }
+    .backstepLesson {
+
+    }
+}
+@media (max-width:615px) {
+    .backstepLesson {
+        left: 1% !important;
+        background-color: #1292ad;
+        color: #eee;
+    }
+}

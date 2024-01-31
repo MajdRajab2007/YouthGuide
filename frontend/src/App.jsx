@@ -22,6 +22,7 @@ import PhpPage from './Pages/article-pages/Programming-pages/Php-Page.jsx';
 import LeaderShip from './Pages/LeaderShip.jsx';
 import BullHorn from './Pages/BullHorn.jsx';
 import DesigningandVideoEditing from './Pages/Designing-and-VideoEditing.jsx';
+import Lesson from './Pages/Lesson.jsx';
 
 
 function App() {
@@ -108,6 +109,11 @@ function App() {
             <Route path='/Designing-and-VideoEditing' element={
                   <PrivateRoute>
                   <DesigningandVideoEditing />
+              </PrivateRoute>
+            } />
+            <Route path='/blog/:lessonID' element={
+                  <PrivateRoute>
+                  <Lesson />
               </PrivateRoute>
             } />
             </Routes>

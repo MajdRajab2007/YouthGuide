@@ -12,15 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('posts', function (Blueprint $table) {
-            
+
             $table->id();
             $table->timestamps();
             $table->string('title');
+            $table->string('team_name');
             $table->text('body');
             $table->text('review');
             $table->string('image')->nullable();
             $table->foreignId('tag_name');
-            $table->foreignId('team_name');
             $table->foreignId('coding_language_name')->nullable();
             $table->foreignId('design_type_name')->nullable();
 

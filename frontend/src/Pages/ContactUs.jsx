@@ -53,7 +53,7 @@ function ContactUs() {
                     </div>
                 </div>
             </div>
-            <Footer />
+            <Footer fix="fixed-bottom" />
         </>
     );
 }

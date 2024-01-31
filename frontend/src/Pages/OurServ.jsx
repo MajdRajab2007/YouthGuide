@@ -30,7 +30,7 @@ function OurServ() {
                                 <div className="aboutText cardServ">
                             <img className="OurServIcons" style={{width:"200px", height:"200px"}} src={video} alt="..."/>
                                         <h3 className="ourServHead">إنتاج الفيديوهات</h3>
-                                        <p className="mt-3" style={{color:"black", fontSize:"14px", width:"50%", lineHeight:"1"}}>تسجيل الفيديوهات المجانية في مختلف المجالات بشكل مجاني</p>
+                                        <p className="mt-3" style={{color:"black", fontSize:"18px", width:"70%", lineHeight:"1"}}>تسجيل الفيديوهات المجانية في مختلف المجالات بشكل مجاني</p>
                                     </div>
 
                                     </div>
@@ -38,7 +38,7 @@ function OurServ() {
                                 <div className="aboutText cardServ">
                             <img className="OurServIcons" style={{width:"200px", height:"200px"}} src={pen} alt="..." />
                                 <h3 className="ourServHead">التدوين وكتابة المقالات</h3>
-                                <p className="mt-3" style={{color:"black", fontSize:"14px", width:"50%", lineHeight:"1"}}>تدوين وكتابة مقالات قصيرة تدريبية لتغطية مختلف المهارات والمجالات البرمجية</p>
+                                <p className="mt-3" style={{color:"black", fontSize:"18px", width:"70%", lineHeight:"1"}}>تدوين وكتابة مقالات قصيرة تدريبية لتغطية مختلف المهارات والمجالات البرمجية</p>
 
 
                                 </div>
@@ -48,7 +48,7 @@ function OurServ() {
                                 <div className="aboutText cardServ">
                             <img className="OurServIcons" style={{width:"200px", height:"200px"}} src={plane} alt="..." />
                                 <h3 className="ourServHead">تقديم خارطة الطريق</h3>
-                                <p className="mt-3" style={{color:"black", fontSize:"14px", width:"50%", lineHeight:"1"}}>تقديم خارطة الطريق الصحيح لأكثر من 120 مجال تريد تعلمه من خلال الاعتماد على تقنية الذكاء الصنعي</p>
+                                <p className="mt-3" style={{color:"black", fontSize:"18px", width:"70%", lineHeight:"1"}}>تقديم خارطة الطريق الصحيح لأكثر من 120 مجال تريد تعلمه من خلال الاعتماد على تقنية الذكاء الصنعي</p>
 
                                 </div>
 
@@ -60,7 +60,7 @@ function OurServ() {
                     <div className="mb-5" style={{clear:"both"}}></div>
                     <Link to="/" className="btn backHome">الصفحة الرئيسية</Link>
                 </div>
-                <Footer />
+                <Footer fix="fixed-bottom"/>
 
 
         </>
