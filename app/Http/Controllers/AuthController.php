@@ -25,11 +25,15 @@ public function register(Request $request)
         ]);
 
 
-        $incomingFields['password'] = bcrypt($incomingFields['password']);
+        // $incomingFields['password'] = bcrypt($incomingFields['password']);
+        // if($request->hasFile('image')){
+        //     $incomingFields['image'] = $request->file('image')->store('images','public');
+        // }
 
+        
         $user = NormalUser::create($incomingFields);
         
-        
+        // $user->sendEmailVerificationNotification();
 
         return redirect('http://localhost:3000/');
     }
@@ -62,7 +66,7 @@ public function login(Request $request)
     }
 
     public function show(Request $request) {
-        $user = User::where('email', $request->email)->first();
+        $user = NormalUser::where('email', $request->email)->first();
 
         if ($user) {
             return response()->json([
@@ -77,4 +81,8 @@ public function login(Request $request)
             ]);
         }
     }
+
+    // public function editUser(Request $request){
+        
+    // }
 }

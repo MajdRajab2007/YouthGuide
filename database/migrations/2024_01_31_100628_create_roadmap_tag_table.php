@@ -11,14 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('roadmaps', function (Blueprint $table) {
+        Schema::create('roadmap_tags', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->timestamps();
-            $table->string('title');
-            $table->text('body');
-            $table->text('review');
-            $table->foreignId('roadmap_tag_name');
-            $table->string('image')->nullable();
         });
     }
 
@@ -27,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('roadmaps');
+        Schema::dropIfExists('roadmap_tags');
     }
 };

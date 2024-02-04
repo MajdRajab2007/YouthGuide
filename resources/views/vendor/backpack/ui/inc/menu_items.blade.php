@@ -9,3 +9,4 @@
 <x-backpack::menu-item title="Teams" icon="la la-question" :link="backpack_url('team')" />
 <x-backpack::menu-item title="Design types" icon="la la-question" :link="backpack_url('design-type')" />
 <x-backpack::menu-item title="Roadmaps" icon="la la-question" :link="backpack_url('roadmaps')" />
+<x-backpack::menu-item title="Roadmap tags" icon="la la-question" :link="backpack_url('roadmap-tag')" />

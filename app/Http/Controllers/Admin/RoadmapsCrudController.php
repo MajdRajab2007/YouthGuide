@@ -64,7 +64,46 @@ class RoadmapsCrudController extends CrudController
             'label'     => 'Image',
             'type'      => 'upload',
             'withFiles' => true
-            ]);
+        ]);
+        
+        CRUD::field([  // Select
+            'label'     => "Tag",
+            'type'      => 'select',
+            'name'      => 'roadmap_tag_name', // the db column for the foreign key
+
+            // optional
+            // 'entity' should point to the method that defines the relationship in your Model
+            // defining entity will make Backpack guess 'model' and 'attribute'
+            'entity'    => 'roadmap_tag',
+
+            // optional - manually specify the related model and attribute
+            'model'     => "App\Models\RoadmapTag", // related model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'pivot'=> true
+
+         ]);
+
+        // CRUD::field([   // select_from_array
+        //     'name'        => 'tag',
+        //     'label'       => "Tag",
+        //     'type'        => 'select_from_array',
+           
+        //     'options'     => [
+        //         'ui-ux' => 'UI-UX',
+        //         'backend' => 'Back-End',
+        //         'frontend' => 'Front-End',
+        //         'ai' => 'Artificial Inteligence',
+        //         'applicationdevelopment' => 'Application Development',
+        //         'desktopdevelopment' => 'Desktop Development'
+        //     ],
+
+        //     'allows_null' => false,
+            
+        //     // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
+        // ])
+
+        
+
         /**
          * Fields can be defined using the fluent syntax:
          * - CRUD::field('price')->type('number');

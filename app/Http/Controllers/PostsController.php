@@ -108,7 +108,7 @@ public function showByTagAndLanguageAndId(Request $request){
     } else {
 
         return response()->json([
-
+            
             'status' => false,
             'message' => 'Post not found.',
 
@@ -122,7 +122,7 @@ public function showById(Request $request){
 }
 
 public function search(Request $request){
-    $posts = Posts::where('title','LIKE',$request->search)->get();
+    $posts = Posts::where('title','LIKE','%'.$request->search.'%')->get();
 
     return response()->json($posts);
 }

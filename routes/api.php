@@ -51,4 +51,6 @@ Route::get('posts/tag_design/{tag_name}/{design_type}/{id}',[PostsController::cl
 Route::get('self-roadmap/',[RoadmapController::class,'show']);
 Route::get('self-roadmap/search/{search}',[RoadmapController::class,'search']);
 
+Route::get('self-roadmap/tag/{tag_name}',[RoadmapController::class,'showByTag']);
+Route::get('self-roadmap/tag/{tag}/{id}',[RoadmapController::class,'showByTagId']);
 

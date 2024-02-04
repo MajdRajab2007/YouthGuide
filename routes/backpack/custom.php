@@ -24,4 +24,5 @@ Route::group([
     Route::crud('team', 'TeamCrudController');
     Route::crud('design-type', 'DesignTypeCrudController');
     Route::crud('roadmaps', 'RoadmapsCrudController');
+    Route::crud('roadmap-tag', 'RoadmapTagCrudController');
 }); // this should be the absolute last line of this file
