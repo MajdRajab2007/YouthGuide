@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CodingLanguageController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\RoadmapController;
 use App\Models\User;
 
 /*
@@ -45,5 +46,9 @@ Route::get('languages/',[CodingLanguageController::class,'showCodingLanguages'])
 
 Route::get('posts/tag_design/{tag_name}/{design_type}',[PostsController::class,'showByTagAndDesignType']);
 Route::get('posts/tag_design/{tag_name}/{design_type}/{id}',[PostsController::class,'showByTagAndDesignAndId']);
+
+//self roadmap routes
+Route::get('self-roadmap/',[RoadmapController::class,'show']);
+Route::get('self-roadmap/search/{search}',[RoadmapController::class,'search']);
 
 
