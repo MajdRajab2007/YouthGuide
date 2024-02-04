@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import BlogSec from "../components/BlogSec"
 import ContactUsSec from "../components/ContactUsSec"
 import Navbar from "../components/Navbar"
@@ -7,6 +7,7 @@ import Slider from "../components/Slider"
 import AboutUsSec from "../components/AboutUsSec"
 import Sponsers from "../components/Sponsers"
 import Footer from "../components/Footer"
+import Loading from "../components/Loading"
 
 
     function Home()
@@ -16,13 +17,22 @@ import Footer from "../components/Footer"
     //         localStorage.setItem('jwt','jwt')
     //     }
     // }, [])
+        let [display, setDisplay] = useState("");
+        let [displayNone, setDisplayNone] = useState("d-none");
 
 
-
+      useEffect(() => {
+        setTimeout(() => {
+            setDisplay("d-none")
+            setDisplayNone("")
+},2000)
+      },[])
 
     return (
         <>
-            <Navbar />
+            <Loading display={display}/>
+          <div className={displayNone}>
+          <Navbar />
             <Slider />
             <BlogSec />
             <OurServSec />
@@ -30,6 +40,7 @@ import Footer from "../components/Footer"
             <AboutUsSec />
             <Sponsers />
             <Footer />
+          </div>
 
 
 

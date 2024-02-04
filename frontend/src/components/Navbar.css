@@ -127,5 +127,40 @@
         padding: 18%;
         width: 70px;
         height: 70px;
+
     }
+    .profile-link::after {
+        content: "الملف الشخصي";
+        font-weight: bold;
+        color: #eee;
+        background-color: #09dbbe;
+        padding: 4px 10px;
+        border-radius: 12px 0 0 12px;
+        position: absolute;
+        right: 105%;
+        -webkit-border-radius: 12px 0 0 12px;
+        -moz-border-radius: 12px 0 0 12px;
+        -ms-border-radius: 12px 0 0 12px;
+        -o-border-radius: 12px 0 0 12px;
+        margin-bottom: 15px;
+        width: 150px;
+        top: 16%;
+        
+}
+}
+.profile-link {
+    width: 50px;
+    height: 50px;
+    background-color: #666060;
+    border-radius: 50%;
+    border: 1px solid #09dbbe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-right: 10px;
+}
+.profile-link img {
+    width: 40px;
+    height: 40px;
 }

@@ -1,0 +1,80 @@
+.Loading {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 100000;
+    background-color: #09dbbe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loadingLogo {
+    width: 100x;
+    height: 100px;
+}
+.loading-text1,
+.loading-text2,
+.loading-text3 {
+    color: #eee;
+    margin: 2px;
+}
+.loading-text1 {
+    animation-name: firstOne;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
+.loading-text2 {
+    animation-name: SecondOne;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
+.loading-text3 {
+    animation-name: thirdOne;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
+@keyframes firstOne {
+    0% {
+        margin-top: 14px;
+
+    }
+    20% {
+        margin-bottom: 18px;
+    }
+    40% {
+        margin-top: 18px;
+    }
+    60% {
+        margin-bottom: 16px;
+    }
+}
+@keyframes SecondOne {
+    0% {
+
+        margin-bottom: 18px;
+    }
+    20% {
+        margin-top: 14px;
+    }
+    40% {
+
+        margin-bottom: 14px;
+    }
+    60% {
+        margin-top: 18px;
+    }
+}
+@keyframes thirdOne {
+    0% {
+        margin-top: 14px;
+    }
+    20% {
+        margin-bottom: 18px;
+    }
+    40% {
+        margin-top: 18px;
+    }
+    60% {
+        margin-bottom: 14px;
+    }
+}

@@ -1,0 +1,129 @@
+.profile-image {
+    margin-right: 25%;
+    width: 290px;
+    height: 290px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    border: 5px solid #04abcf;
+    padding: 10px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    position: relative;
+}
+.UserImage {
+    width: 80%;
+}
+.changepic {
+    background-color: #09dbbe;
+    color: #fff;
+    width: 75px;
+    height: 75px;
+    font-size: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.profile-read-header {
+    display: flex;
+    justify-content: space-between;
+}
+.profile-pic {
+    position: relative;
+    bottom: 160px;
+}
+.showAllReadButton {
+    background-color: transparent;
+    padding: 6px 24px;
+    font-weight: bold;
+    font-size: 18px;
+    border: 2px solid black;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+}
+.readCard {
+    background-color: #eee;
+    margin-bottom: 20px;
+    width: 80%;
+    box-shadow: 4px 4px 16px black;
+}
+.courseName {
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #04abcf;
+    text-align: center;
+    color: #eee;
+    line-height: 2;
+}
+.numberOfLessons {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 3;
+    background-color: #eee;
+}
+.arrowConatiner {
+    background-color: #04abcf;
+    width: 50%;
+    margin: auto;
+    position: relative;
+    bottom: 10px;
+    /*padding: 8px 4px;
+    */display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+.ArrowAltRight {
+    font-size: 30px;
+    color: #eee;
+}
+.backgroundProfilePage {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+}
+.marginTopForImage {
+    margin-bottom: 380px;
+}
+@media (max-width: 994px) {
+    .readCard {
+        width: 100% !important;
+
+    }
+
+}
+@media (max-width: 786px) {
+    .readCard {
+        width: 100% !important;
+
+    }
+    .profileDis {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .profile-pic {
+        bottom: 255px;
+    }
+}
+

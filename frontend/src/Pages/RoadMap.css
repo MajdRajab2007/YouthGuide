@@ -1,0 +1,63 @@
+.roadmapTitle {
+    background-color: #09dbbe;
+    color: #eee;
+    font-weight: bold;
+    padding: 4px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    margin-right: 15% !important;
+    height: 65%;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+@media (max-width: 700px) {
+    .teamlogo{
+        padding: 10px;
+    }
+    .roadmapTitle {
+        margin-top: auto;
+    width: 110%;
+    margin-right: -24% !important;
+    }
+
+}
+.backHome-roadmap {
+    background-color: #1292ad;
+    width: 12%;
+    position: absolute;
+    top: 4%;
+    margin: 0 0 20px 0;
+    left: 1%;
+    font-weight: bold;
+    color: #eee;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+.roadmap-path {
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #eee;
+    font-size: 34px;
+    font-weight: bold;
+    border-radius: 8px;
+    line-height: 5;
+    background: linear-gradient(to left, #09dbbe, #1292ad);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    width: 90%;
+    margin-right: 28px;
+    margin-left: auto;
+    margin-top: 13px;
+}

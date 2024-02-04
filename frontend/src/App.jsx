@@ -23,6 +23,8 @@ import LeaderShip from './Pages/LeaderShip.jsx';
 import BullHorn from './Pages/BullHorn.jsx';
 import DesigningandVideoEditing from './Pages/Designing-and-VideoEditing.jsx';
 import Lesson from './Pages/Lesson.jsx';
+import Profile from './Pages/Profile.jsx';
+import RoadMap from './Pages/RoadMap.jsx';
 
 
 function App() {
@@ -56,6 +58,16 @@ function App() {
             <Route path='/blog' element={
                   <PrivateRoute>
                   <Aticles />
+              </PrivateRoute>
+            } />
+            <Route path='/profile' element={
+                  <PrivateRoute>
+                  <Profile />
+              </PrivateRoute>
+            } />
+            <Route path='/road-map' element={
+                  <PrivateRoute>
+                  <RoadMap />
               </PrivateRoute>
             } />
             <Route path='/signup' element={<Signup />} />

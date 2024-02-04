@@ -81,6 +81,17 @@ function Navbar() {
                                       من نحن؟
                                 </Link>
                             </li>
+                            <li className="nav-item profile-link">
+                                <Link
+                                style={{color:"#eee"}}
+                                    className="nav-link "
+                                    aria-current="page"
+                                    to="/profile"
+                                >
+                                    
+                                    <img src={logo} alt="..." />
+                                </Link>
+                            </li>
                             <li className="nav-item navLink">
                                   <Link
                                 onClick={() => localStorage.clear()}
