@@ -6,12 +6,24 @@ import programming from "../images/programming.png"
 import leaderShip from "../images/leadership.png"
 import bullhorn from "../images/bullhorn.png"
 import dAndv from "../images/DesigningAndVideoEditing.png"
+import Loading from "../components/Loading"
+import { useEffect, useState } from "react"
 
 function Aticles() {
-
+    
+    let [display, setDisplay] = useState("");
+    let [displayNone, setDisplayNone] = useState("d-none");
+    useEffect(() => {
+      setTimeout(() => {
+        setDisplay("d-none")
+        setDisplayNone("")
+      }, 2000)
+    }, [])
     return (
         <>
-                <div className="articles">
+            <Loading display={display} />
+            <div className={`${displayNone}`}>
+                <div className={`articles `}>
                          <div className="container">
                          <div className="row mt-3 headOfBlog">
                         <div
@@ -73,6 +85,7 @@ function Aticles() {
                     </div>
 
                 </div>
+            </div>
 
 
         </>

@@ -1,11 +1,23 @@
 import { Link } from "react-router-dom";
 import logo from "../images/logo.png"
 import "./Programming.css"
+import { useEffect, useState } from "react";
+import Loading from "../components/Loading";
 function Programming() {
+    let [display, setDisplay] = useState("");
+    let [displayNone, setDisplayNone] = useState("d-none");
+    useEffect(() => {
+        setTimeout(() => {
+            setDisplay("d-none")
+            setDisplayNone("")
+        }, 2000)
+    }, [])
 
     return (
         <>
-                                        <div className="container">
+                <Loading display={display} />
+            <div className={displayNone} >
+            <div className="container">
                          <div className="row mt-3 headOfProgramming">
                         <div
                             className=" col-4"
@@ -60,6 +72,7 @@ function Programming() {
 
                         </div>
                     </div>
+            </div>
 
         </>
     )

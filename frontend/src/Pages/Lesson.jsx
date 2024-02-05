@@ -1,19 +1,33 @@
 import { Link, useParams } from "react-router-dom"
 import "./Lesson.css"
 import { useEffect, useState } from "react"
+import Loading from "../components/Loading";
 function Lesson() {
+
+    let [display, setDisplay] = useState("");
+    let [displayNone, setDisplayNone] = useState("d-none");
+
+
+
     let params = useParams()
     let [lessonDetails, setLessonDetails] = useState([])
     console.log(params.lessonID)
     let lessonId = params.lessonID
     useEffect(() => {
             fetch(`http://localhost:8000/api/posts/${lessonId}`).then((res) => res.json()).then((data) => setLessonDetails(data))
+
+            setTimeout(() => {
+                setDisplay("d-none")
+                setDisplayNone("")
+              }, 2000)
+      
         }, [])
 
         console.log(lessonDetails)
         return (
         <>
-        <div className="Lesson-style-container">
+                <Loading display={display} />
+        <div className={`Lesson-style-container ${displayNone}`}>
             <div className="container">
                 <div className="lesson-body">
                     <h1 className="lesson-title">{lessonDetails.title}</h1>

@@ -1,13 +1,11 @@
 import whiteLogo from "../images/logoWhite.png"
 import "./Loading.css"
+import loading from "../images/loading.mp4"
 function Loading(props) {
 
     return(<>
             <div className={`Loading ${props.display}`}>
-                    <img src={whiteLogo} alt="..." className=" loadingLogo" />
-                    <h4 className="loading-text1">Learn</h4>
-                    <h4 className="loading-text2">Create</h4>
-                    <h4 className="loading-text3">Develop</h4>
+                    <video className="loading-video" src={loading} autoPlay muted></video>
             </div>
     </>)
 }

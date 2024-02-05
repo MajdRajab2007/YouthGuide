@@ -42,6 +42,7 @@
 }
 .navLink:hover:not(:last-child)  {
     background-color: #eee;
+    margin-top: 6px;
 
 }
 .navLink:hover:not(:last-child) a {

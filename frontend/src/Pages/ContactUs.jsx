@@ -3,11 +3,22 @@ import { FaFacebook, FaInstagram, FaInstagramSquare, FaMailBulk, FaPhone, FaSear
 import { Link } from "react-router-dom";
 import "./ContactUs.css"
 import Footer from "../components/Footer";
+import { useEffect, useState } from "react";
+import Loading from "../components/Loading";
 
 function ContactUs() {
+    let [display, setDisplay] = useState("");
+    let [displayNone, setDisplayNone] = useState("d-none");
+    useEffect(() => {
+      setTimeout(() => {
+        setDisplay("d-none")
+        setDisplayNone("")
+      }, 2000)
+    }, [])
     return (
         <>
-            <div className="contactus">
+                <Loading display={display} />
+            <div className={`contactus ${displayNone}`}>
                 <div className="container">
                     <div className="row mt-3 headOfAbout">
                         <div

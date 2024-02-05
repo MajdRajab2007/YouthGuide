@@ -4,11 +4,22 @@ import logo from "../images/logo.png"
 import profilepic from "../images/profilePic.png"
 import { FaArrowAltCircleRight, FaLongArrowAltLeft, FaLongArrowAltRight, FaPlus } from "react-icons/fa"
 import { Link } from "react-router-dom"
+import { useEffect, useState } from "react"
+import Loading from "../components/Loading"
 function Profile() {
+    let [display, setDisplay] = useState("");
+    let [displayNone, setDisplayNone] = useState("d-none");
+    useEffect(() => {
+        setTimeout(() => {
+            setDisplay("d-none")
+            setDisplayNone("")
+        }, 2000)
+    }, [])
 
     return (
         <>
-            <div className="profile">
+                <Loading display={display} />
+            <div className={`profile ${displayNone}`}>
                     <div >
                         <img src={background} alt="..." className=" w-100 backgroundProfilePage" />
                     </div>

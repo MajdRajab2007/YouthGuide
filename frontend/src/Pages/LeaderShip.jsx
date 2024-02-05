@@ -5,11 +5,20 @@ import { useEffect, useState } from "react";
 
 import TopThree from "../components/Topthree";
 import AllPosts from "../components/AllPosts";
+import Loading from "../components/Loading";
 function LeaderShip() {
+    let [display, setDisplay] = useState("");
+    let [displayNone, setDisplayNone] = useState("d-none");
+  
 
     let [lessons, setLessons] = useState([])
     useEffect(() => {
         fetch("http://localhost:8000/api/posts/tag_lang/1/1/").then((res) => res.json()).then((data) => setLessons(data.data))
+   
+        setTimeout(() => {
+            setDisplay("d-none")
+            setDisplayNone("")
+          }, 2000)
     },[])
 
 
@@ -34,7 +43,8 @@ function LeaderShip() {
 
     return (
         <>
-            <div className="htmlPage">
+                <Loading display={display} />
+            <div className={`htmlPage ${displayNone}`}>
                 <div className="container">
                 <div className="row mt-3 headOfAbout">
                         <div

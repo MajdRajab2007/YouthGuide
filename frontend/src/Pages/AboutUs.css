@@ -27,15 +27,14 @@
 }
 
 
- .headOfAbout {
-
- }
+.headOfAbout {}
 
 .teamlogo {
     /* padding: 10%; */
     width: 70px;
     height: 70px;
 }
+
 .defineWhoAreUs {
     width: 50%;
     font-size: 22px !important;
@@ -43,21 +42,28 @@
     text-align: right;
     margin-right: 25% !important;
     margin: 33px 33px 33px 30px;
+    background-color: #09dbbe;
+    color: #fff;
+    border-radius: 20px 20px 4px 4px;
 }
+
 @media (max-width: 700px) {
-    .teamlogo{
+    .teamlogo {
         padding: 10px;
     }
+
     .whous {
         margin-top: auto;
-    width: 110%;
-    margin-right: -24% !important;
+        width: 110%;
+        margin-right: -24% !important;
     }
+
     .defineWhoAreUs {
         width: 70%;
         font-size: 14px;
         margin-right: 18% !important;
     }
+
     .backHome {
         top: 50%;
         width: 18%;
@@ -67,12 +73,14 @@
         justify-content: center;
         align-items: center;
     }
+
     .backStep {
         font-size: 10px;
         top: 8% !important;
         left: 2% !important;
     }
 }
+
 .aboutText {
     background-color: #09dbbe;
     width: 70%;
@@ -99,24 +107,26 @@
     border: 2px solid #09dbbe;
     background-color: #eee;
     color: #09dbbe;
-    width: 90%;
-    cursor:grab;
+    padding: 32px;
+    cursor: grab;
     transition: 0.5s;
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
 }
+
 .cardAbout {
     justify-content: center;
     display: flex;
 
 }
+
 .backHome {
     background-color: #1292ad;
     width: 10%;
     position: absolute;
-    top:  1%;
+    top: 1%;
     margin: 0 0 20px 0;
     left: 2%;
     font-weight: bold;
@@ -127,6 +137,7 @@
     -ms-transition: 0.4s;
     -o-transition: 0.4s;
 }
+
 .backHome:hover {
     border: 2px solid #1292ad;
     background-color: #eee;
@@ -137,11 +148,12 @@
     -ms-transition: 0.4s;
     -o-transition: 0.4s;
 }
+
 .backStep {
     background-color: #1292ad;
     width: 10%;
     position: absolute;
-    top:  1%;
+    top: 1%;
     left: 14%;
     font-weight: bold;
 
@@ -154,6 +166,7 @@
     -ms-transition: 0.4s;
     -o-transition: 0.4s;
 }
+
 .backStep:hover {
     border: 2px solid #1292ad;
     background-color: #eee;
@@ -169,14 +182,17 @@
     background-color: #09dbbe;
     color: #eee;
 }
+
 .sliderButtons {
     color: #eee;
     font-weight: bold;
 }
+
 .sliderButtons:hover {
     color: #09dbbe !important;
     background-color: #fff;
 }
+
 .sliderButtonActive {
     color: #09dbbe !important;
     background-color: #fff;
@@ -186,12 +202,14 @@
     width: 84%;
     margin: auto;
 }
+
 .Sliderarrows {
     background: #1292ad;
     width: fit-content;
     height: fit-content;
     margin: auto;
 }
+
 @media(max-width: 985px) {
     .teamsImgs {
         width: 98%;
