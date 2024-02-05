@@ -6,15 +6,8 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Roadmaps extends Model
+class RoadmapTag extends Model
 {
-    protected $fillable = [
-        'title',
-        'body',
-        'review',
-        'image',
-        'roadmap_tag_name'
-    ];
     use CrudTrait;
     use HasFactory;
 
@@ -24,10 +17,11 @@ class Roadmaps extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'roadmaps';
+    protected $table = 'roadmap_tags';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
+    // protected $fillable = [];
     // protected $hidden = [];
 
     /*
@@ -41,8 +35,8 @@ class Roadmaps extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-    public function roadmap_tag(){
-        return $this->belongsTo(RoadmapTag::class);
+    public function roadmaps(){
+        return $this->hasMany(Roadmaps::class);
     }
     /*
     |--------------------------------------------------------------------------
