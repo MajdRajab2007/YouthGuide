@@ -1,10 +1,9 @@
 
 import { Link } from "react-router-dom";
-import logo from "../images/logo.png"
-import "./Programming.css"
-import Loading from "../components/Loading";
+import logo from "../../../images/logo.png"
+import Loading from "../../../components/Loading";
 import { useEffect, useState } from "react";
-function DesigningandVideoEditing() {
+function GraphicDesign() {
     let [display, setDisplay] = useState("");
     let [displayNone, setDisplayNone] = useState("d-none");
     useEffect(() => {
@@ -31,24 +30,24 @@ function DesigningandVideoEditing() {
                             className="col-7"
                             style={{ display: "flex", alignItems: "center" }}
                         >
-                            <p className="whous graphic" style={{fontSize:"23px"}}>التصميم والمونتاج</p>
+                            <p className="whous graphic" style={{fontSize:"23px"}}>التصميم الجرافيكي</p>
                         </div>
                     </div>
                          </div>
                          <Link to="/" className="btn backHome">الصفحة الرئيسية</Link>
-                         <Link to="/blog" className="btn backStep">رجوع</Link>
+                         <Link to="/Designing-and-VideoEditing" className="btn backStep">رجوع</Link>
 
                     <div className="container mt-5">
                         <div className="row langProgContainer">
 
                             <div className="col-12 col-md-4 col-lg-4">
-                                <Link to="/Designing-and-VideoEditing/Graphic-Design" className="SectioBox">
-                                        التصميم الجرافيكي
+                                <Link to="/Designing-and-VideoEditing/Graphic-Design/Canva" className="SectioBox">
+                                        Canva
                                 </Link>
                             </div>
-                            <Link to="/Designing-and-VideoEditing/ui-ux" className="col-12 col-md-4 col-lg-4">
+                            <Link to="/Designing-and-VideoEditing/Graphic-Design/Photoshop" className="col-12 col-md-4 col-lg-4">
                                 <div className="SectioBox" style={{fontSize:"32px"}}>
-                                         UI UX
+                                         Photoshop
                                 </div>
                             </Link>
                            
@@ -61,4 +60,4 @@ function DesigningandVideoEditing() {
         </>
     )
 }
-export default DesigningandVideoEditing;
+export default GraphicDesign;

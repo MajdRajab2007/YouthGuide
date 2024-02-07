@@ -12,7 +12,7 @@ useEffect(() => {
 
 },[])
 let myCode = "A648jdkfsjnvvXddt738yr83utrewgHGDHOIfuU9IOSDGOSDHUGSDUIHFIOoy897389uio3hrihehioH0W9Q0UR90382REMNFBZDFCBSHAGFEWY90RU89Y88t7TE2GEUIh()uIHIOHSD09FUESNFPIh8gd98AYDH09AWHNFInbUIHGAIOhd90y89dHDKsjfosauf90hsdfnsdigh9seghioasdfhioAHGIDHCSiFAHIOhiFJSDOIFHonfpouaofwihfio;ashogfsdhfkAHGIOaHBfdoisakgbs,HAFkrlbfvmhaefjlsghfdksajfhsioa;fgdoarihtgawuufsoaebtkszufrwehghsahfsopdhgbhdosgbsdkgjkjsdfjkd;lxhgsoapvmxdksM,fdfksdklaskgklfdklgnsdlgkdslgjsdogjdjgsdogjsogjdsogsdjgdsogndskaOHahHIOIOjNKLhsfmnf msakgfdmnfla;skfasjpofisakpgfospdgfaioedosdfdIOmfsdajognfkldskgmlsdkhdkKPlAkjkpfSNBKLFJSAKFKAJKhsoansjKNAKLJK';SDZ CKJSJGKDS'GJIOSUFSDLMFNJKadhijfdspjfiosahfnsdfldsikgmdspgjsdopfhsaoidhOPAKAF';FJDSPGNKDNGOPDSFHSAODBXKFHUIESBJFLNFSAGKNASHIOFKSDMFKSAHDJZOhdospghiosdjgdsklgds,jfsaiofhsa9r3u5623523793jfnkdlsfgse=-t9-=wejgnsdlkhfsa98fs8tafbkndlsgior-gopjdnvxklfgsd89f29748923ghrfea8rfy83wgru983u12ygruiwegifhewigfjdgfjshgfmhsgmhgcmnvbmxnsxbcvmsncgshvbmc9m6snbxcsncmwvsnxcmvsnxmcsvbvbsnxcbvsnbxcv4msn89bxc4mv4sn89xmc489vsvbsmnbcsmncbvsnb1v5m6snxb45smn4bwxc5mvs4n9b8xc4mv9s8nxbnc67863w45FTYSADGFYSGDEUFSUIDFSASDFSDFSDFDSFDSFSDFSD"
-
+let jwt = "1544sad8as4d4sad45sa4f8sa4f8sa4fasf8a4sfas4f38yr83utrewgHGDHOIfuU9IOSDGOSDHUGSDUIHFIOoy897389uio3hrihehioH0W9Q0UR90382REMNFBZDFCBSHAGFEWY90RU89Y88t7TE2GEUIh"
     return (
         <>
             <div>
@@ -25,7 +25,7 @@ let myCode = "A648jdkfsjnvvXddt738yr83utrewgHGDHOIfuU9IOSDGOSDHUGSDUIHFIOoy89738
                             action="http://127.0.0.1:8000/login"
                             method="POST"
                             onSubmit={() => {
-                                localStorage.setItem("jwt", myCode)
+                                localStorage.setItem(jwt, myCode)
 
 
                             }}

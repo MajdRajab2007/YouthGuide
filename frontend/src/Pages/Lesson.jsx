@@ -11,7 +11,7 @@ function Lesson() {
 
     let params = useParams()
     let [lessonDetails, setLessonDetails] = useState([])
-    console.log(params.lessonID)
+    // console.log(params.lessonID)
     let lessonId = params.lessonID
     useEffect(() => {
             fetch(`http://localhost:8000/api/posts/${lessonId}`).then((res) => res.json()).then((data) => setLessonDetails(data))
@@ -39,7 +39,7 @@ function Lesson() {
             </div>
         </div>
 
-                         <Link to="/blog" className="btn backStep backstepLesson">رجوع</Link>
+                         <button onClick={() => window.history.back()} className="btn backStep backstepLesson">رجوع</button>
         </>
     )
 }

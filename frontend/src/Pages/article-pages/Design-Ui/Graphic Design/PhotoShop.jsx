@@ -1,21 +1,20 @@
 import { Link } from "react-router-dom";
-import "./ProgrammingStyle.css"
-import logo from "../../../images/logo.png"
+import logo from "../../../../images/logo.png"
 import { useEffect, useState } from "react";
-import desc from "../../../images/lesson.jpg"
-import TopThree from "../../../components/Topthree";
-import AllPosts from "../../../components/AllPosts";
-function PhpPage() {
+// import desc from "../../../../images/lesson.jpg"
+import TopThree from "../../../../components/Topthree";
+import AllPosts from "../../../../components/AllPosts";
+function Photoshop() {
 
     let [lessons, setLessons] = useState([])
     useEffect(() => {
-        fetch("http://localhost:8000/api/posts/tag_lang/1/4/").then((res) => res.json()).then((data) => setLessons(data.data))
+        fetch("http://localhost:8000/api/posts/tag/5/").then((res) => res.json()).then((data) => setLessons(data.data))
     },[])
 
 
 
     let threeArticles = <div className="row mt-3">
-        <TopThree tag="tag_lang" name="4" section="1"/>
+        <TopThree tag="tag" section="5" />
 
 
 
@@ -27,7 +26,7 @@ function PhpPage() {
     </div>;
     let allArticles =    <div className="row mt-5">
 
-            <AllPosts tag="tag_lang" name="4" section="1" />
+            <AllPosts tag="tag" section="5"/>
     </div>
 
     let [content, setContent] = useState(threeArticles)
@@ -49,7 +48,7 @@ function PhpPage() {
                             className="col-7"
                             style={{ display: "flex", alignItems: "center" }}
                         >
-                            <p className="whous ">PHP</p>
+                            <p className="whous ">Photoshop</p>
                         </div>
                     </div>
 
@@ -63,9 +62,9 @@ function PhpPage() {
 
                 </div>
                 <Link to="/" className="btn backHome">الصفحة الرئيسية</Link>
-                         <Link to="/programming" className="btn backStep">رجوع</Link>
+                         <Link to="/Designing-and-VideoEditing/Graphic-Design" className="btn backStep">رجوع</Link>
 
         </>
     )
 }
-export default PhpPage;
+export default Photoshop;

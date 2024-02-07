@@ -22,23 +22,26 @@
     -o-transition: 0.5s;
     box-shadow: 2px 5px 16px 0px black;
 }
+
 .langProgContainer {
     justify-content: center;
     align-items: center;
 }
+
 .langBox:hover {
     width: 240px;
     height: 240px;
     font-size: 34px;
 
 }
+
 .SectioBox {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     padding: 20px 35px;
     color: #eee;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 27px;
     background-color: #09dbbe;
     display: flex;
     justify-content: center;
@@ -56,4 +59,12 @@
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
     box-shadow: 2px 5px 16px 0px black;
+}
+.graphic {
+    width: 40%;
+}
+@media(max-width: 768px) {
+    .graphic {
+        width: 100%;
+    }
 }

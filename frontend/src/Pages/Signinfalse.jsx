@@ -6,11 +6,12 @@ import { useEffect } from "react"
 
 
 function Signinfalse() {
+        let jwt = "1544sad8as4d4sad45sa4f8sa4f8sa4fasf8a4sfas4f38yr83utrewgHGDHOIfuU9IOSDGOSDHUGSDUIHFIOoy897389uio3hrihehioH0W9Q0UR90382REMNFBZDFCBSHAGFEWY90RU89Y88t7TE2GEUIh"
              
         useEffect(() => {
           <Navigate to="/signin" />
     }, [])
-         window.localStorage.setItem("jwt", "");
+         window.localStorage.setItem(jwt, "");
                   window.localStorage.setItem("messege", "البيانات المدخلة غير صحيحة");
 
          window.location.href = "/signin"

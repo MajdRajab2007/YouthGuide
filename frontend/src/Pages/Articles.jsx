@@ -47,7 +47,7 @@ function Aticles() {
 
                 <div className="articlesContainer mt-5 row">
 
-                    <div className="col-md-6 col-lg-6 col-12 ">
+                    <div className="col-md-6 col-lg-4 col-12 ">
 
                         <Link to="/programming">
                         <div className="articleBox">
@@ -56,7 +56,7 @@ function Aticles() {
                             </div>
                         </Link>
                     </div>
-                    <div className="col-md-6 col-lg-6 col-12 ">
+                    {/* <div className="col-md-6 col-lg-6 col-12 ">
 
                             <Link to="/leaderShip">
                             <div className="articleBox">
@@ -64,8 +64,8 @@ function Aticles() {
                         <img src={leaderShip} alt="..." className="articleImage" />
                                 </div>
                             </Link>
-                    </div>
-                    <div className="col-md-6 col-lg-6 col-12 ">
+                    </div> */}
+                    <div className="col-md-6 col-lg-4 col-12 ">
 
                            <Link to="/bullhorn">
                            <div className="articleBox">
@@ -74,7 +74,7 @@ function Aticles() {
                             </div>
                            </Link>
                     </div>
-                    <div className="col-md-6 col-lg-6 col-12 ">
+                    <div className="col-md-6 col-lg-4 col-12 ">
 
                           <Link to="/Designing-and-VideoEditing">
                           <div className="articleBox">

@@ -55,14 +55,14 @@ function OurServ() {
 
                             </div>
                             <div className="cardAbout  col-lg-4 col-md-6 col-12 mt-4">
-                                <Link to="/road-map" className="aboutText cardServ">
+                                <div  className="aboutText cardServ">
 
                                     <img className="OurServIcons" style={{ width: "200px", height: "200px" }} src={plane} alt="..." />
                                     <h3 className="ourServHead">تقديم خارطة الطريق</h3>
                                     <p className="mt-3" style={{ color: "black", fontSize: "18px", width: "70%", lineHeight: "1" }}>تقديم خارطة الطريق الصحيح لأكثر من 120 مجال تريد تعلمه من خلال الاعتماد على تقنية الذكاء الصنعي</p>
 
-
-                                </Link>
+                                                <p className="inProgress">IN PROGRESS</p>
+                                </div>
 
                             </div>
                         </div>

@@ -27,7 +27,7 @@ function Profile() {
                 <div className="container ">
                     <div className="row profileDis" style={{    position: "relative",bottom: "1px"}}>
                         <div className="col-12 col-md-6 col-lg-6">
-                            <div className="profile-read-header">
+                            {/* <div className="profile-read-header">
                                     <h2>المقالات المقروءة</h2>
                                     <button className="showAllReadButton">شاهد الكل</button>
                             </div>
@@ -68,7 +68,7 @@ function Profile() {
                                     </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
 
                         <div className="col-12 col-md-6 col-lg-6">

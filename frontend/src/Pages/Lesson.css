@@ -2,6 +2,9 @@
     background-color: #1292ad;
     padding-top: 10px;
     padding-bottom: 40px;
+    width: 100vw; 
+    
+        height: 100vh;
 }
 .backstepLesson {
     top: 3% !important;
@@ -31,7 +34,11 @@
     -moz-border-radius: 12px;
     -ms-border-radius: 12px;
     -o-border-radius: 12px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+.lesson-image {
+    width: 100%;
 }
 .lesson-disc {
     font-size: 24px;
