@@ -24,8 +24,8 @@ public function register(Request $request)
 
         ]);
 
-
-        // $incomingFields['password'] = bcrypt($incomingFields['password']);
+        
+        $incomingFields['password'] = bcrypt($incomingFields['password']);
         // if($request->hasFile('image')){
         //     $incomingFields['image'] = $request->file('image')->store('images','public');
         // }

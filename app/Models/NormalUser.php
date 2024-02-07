@@ -26,7 +26,7 @@ class NormalUser extends Authenticatable implements MustVerifyEmail
         'email',
         'password',
         'image',
-        'about'
+        
     ];
 
     /**
