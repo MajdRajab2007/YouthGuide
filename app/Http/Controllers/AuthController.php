@@ -81,7 +81,40 @@ public function login(Request $request)
             ]);
         }
     }
+    public function editUser(Request $request)
+{
+    // Retrieve the authenticated user
+    $user = NormalUser::where('email',$request->email)->first();
 
+    // Validate the incoming request
+    $request->validate([
+        'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
+
+    // Check if a new image file was uploaded
+    if ($request->hasFile('image')) {
+        // Get the new image file
+        $image = $request->file('image');
+
+        // Generate a unique filename for the new image
+        $filename = uniqid() . '.' . $image->getClientOriginalExtension();
+
+        // Move the new image file to the public/storage directory
+        $image->storeAs('public/storage', $filename);
+
+        // Update the user's image field with the new filename
+        $user->image = $filename;
+    }
+
+    // Save the updated user to the database
+    $user->save();
+
+    // Return a response indicating success
+    return response()->json([
+        'status' => true,
+        'message' => 'User updated successfully.',
+    ]);
+}
     // public function editUser(Request $request){
         
     // }
