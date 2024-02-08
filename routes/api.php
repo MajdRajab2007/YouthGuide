@@ -27,7 +27,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('users/{email}',[AuthController::class,'show']);
-Route::put('users/edit_photo/{email',[AuthController::class,'editUser']);
+Route::get('users/{email}/data',[AuthController::class,'data']);
+//edit photo
+
+Route::put('users/edit/{email}',[AuthController::class,'edit']);
+Route::put('users/editPhoto/{email}',[AuthController::class,'editUser']);
 //find by tag name(video / graphic...)
 Route::get('posts/tag/{tag_name}',[PostsController::class,'showByTag']);
 Route::get('posts/tag/{tag_name}/{id}',[PostsController::class,'showByTagId']);

@@ -7,6 +7,7 @@ function Signup() {
     let [name, setName] = useState("");
     let navigate = useNavigate();
     let [lName, setLname] = useState("");
+    let [date, setDate] = useState("");
     let [email, setEmail] = useState("");
     let [password, setPassword] = useState("");
     let [log, setLog] = useState(false)
@@ -37,8 +38,8 @@ function Signup() {
         <>
             <img className="  logoAct" src={logo} alt="sada" />
             <div className="login template d-flex vh-100 ms-5 align-items-center w-100  backgroundForForm">
-                <div className="40-w p-5 rounded  formContainer">
-                    <form  action="http://127.0.0.1:8000/register" method="POST">
+                <div className="40-w p-5 rounded  formContainer signupContainer">
+                    <form action="http://127.0.0.1:8000/register" method="POST">
                         <h3 className="text-center">تسجيل حساب جديد</h3>
                         <div className="mb-2 mt-3">
                             <label htmlFor="name">الاسم</label>
@@ -79,6 +80,56 @@ function Signup() {
                             ></p>
                         </div>
                         <div className="mb-2">
+                            <label htmlFor="birthday">تاريخ الميلاد</label>
+                            <input
+                                onChange={(e) => {
+                                   setDate(e.target.value)
+                                }}
+                                required
+                                type="date"
+                                name="birthday"
+                                value={date}
+                                placeholder="تاريخ الميلاد"
+                                className="form-control"
+                            />
+                            <p
+                                style={{ color: "red", fontWeight: "bold" }}
+                                className="warning"
+                            ></p>
+                        </div>
+                        <div className="mb-2">
+                            <label >الجنس</label>
+                            <select name="gender" className="form-select selectField" aria-label="Default select example">
+                                <option value="male" name="male">ذكر</option>
+                                <option value="female" name="female">أنثى</option>
+                            </select>
+                        </div>
+                        <div className="mb-2">
+                            <label >الوضع المهني</label>
+                            <select name="occupation" className="form-select selectField" aria-label="Default select example">
+                                <option value="student" name="student">طالب</option>
+                                <option value="employed" name="employed">موظف</option>
+                            </select>
+                        </div>
+                        {/* <div className="mb-2">
+                            <label htmlFor="email">حدثنا عن نفسك</label>
+                            <input
+                                onChange={(e) => {
+                                    setEmail(e.target.value);
+                                }}
+                                required
+                                type="text"
+                                name="about"
+                                placeholder="حدثنا عن نفسك"
+                                className="form-control"
+                                maxLength="40"
+                            />
+                            <p
+                                style={{ color: "red", fontWeight: "bold" }}
+                                className="warning"
+                            ></p>
+                        </div> */}
+                        <div className="mb-2">
                             <label htmlFor="email">البريد الإلكتروني</label>
                             <input
                                 onChange={(e) => {
@@ -95,6 +146,7 @@ function Signup() {
                                 className="warning"
                             ></p>
                         </div>
+
                         <div className="mb-2">
                             <label htmlFor="password">كلمة السر</label>
                             <input

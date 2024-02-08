@@ -34,8 +34,8 @@
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     position: absolute;
-    left: 0;
-    bottom: 0;
+    bottom: 0%;
+    cursor: pointer;
 }
 .profile-read-header {
     display: flex;
@@ -127,3 +127,28 @@
     }
 }
 
+
+
+.changeImage {
+    position: absolute;
+    top: 32%;
+    left: 10%;
+    font-weight: bold;
+    background-color: #09dbbe;
+}.changeImage:hover {
+    background-color: #04abcf;
+}
+.editBio {
+    color: #09dbbe;
+    font-size: 24px;
+    cursor: pointer;
+}
+.baio {
+    padding: 30px;
+}
+.athorInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

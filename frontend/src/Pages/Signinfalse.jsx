@@ -15,6 +15,7 @@ function Signinfalse() {
                   window.localStorage.setItem("messege", "البيانات المدخلة غير صحيحة");
 
          window.location.href = "/signin"
+         localStorage.removeItem("email")
                
 
 
