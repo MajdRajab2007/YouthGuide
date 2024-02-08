@@ -2,7 +2,7 @@ import "./Profile.css"
 import background from "../images/backgroundForProfilePage.jpg"
 import logo from "../images/logo.png"
 import profilepic from "../images/guest.png"
-import { FaArrowAltCircleRight, FaLongArrowAltLeft, FaLongArrowAltRight, FaPenAlt, FaPlus } from "react-icons/fa"
+import { FaArrowAltCircleRight, FaCircle, FaGgCircle, FaLongArrowAltLeft, FaLongArrowAltRight, FaPenAlt, FaPlus } from "react-icons/fa"
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import Loading from "../components/Loading"
@@ -19,7 +19,7 @@ function Profile() {
     let [display, setDisplay] = useState("");
     let [displayNone, setDisplayNone] = useState("d-none");
 
-
+    let gender = userInfo.gender
 
     useEffect(() => {
         fetch(`http://127.0.0.1:8000/api/users/${email}`).then((res) => res.json()).then((data) => setUserInfo(data.data))
@@ -88,28 +88,48 @@ function Profile() {
         <>
             <Loading display={display} />
             <div className={`profile ${displayNone}`}>
-                <div >
-                    <img src={background} alt="..." className=" w-100 backgroundProfilePage" />
-                </div>
+               
                 <div className="marginTopForImage"></div>
                 <div className="container ">
                     <div className="row profileDis" style={{ position: "relative", bottom: "1px" }}>
 
                         <div className="col-12 col-md-6 col-lg-6 athorInfo" >
 
-                            <div className="mt-2 me-auto">
-                               Em
-                            </div>
+                                <div className="gender mt-4 ms-auto">
+                                    <h4>الجنس: 
+                                        <div className="genderSelction">
+                                            <div className="gend">
+                                                <div>{userInfo.gender === "male" ? <FaCircle className="selectedFromSignUp" /> : ""}</div>
+                                                ذكر
+                                            </div>
+                                            <div className="gend">
+                                                <div>{userInfo.gender === "female" ? <FaCircle className="selectedFromSignUp" /> : ""}</div>
+                                                    أنثى
+                                            </div>
+                                        </div>
+                                    </h4>
+                                </div>
+                                <div className="occupation mt-4" style={{width:"100%"}}>
+                                    <h4>الحالة: 
+                                    <div className="occupationSelction">
+                                            <div className="occupationField">
+                                                <div>{userInfo.occupation === "employed" ? <FaCircle className="selectedFromSignUp" /> : ""}</div>
+                                                موظف
+                                            </div>
+                                            <div className="occupationField">
+                                                <div>{userInfo.occupation === "student" ? <FaCircle className="selectedFromSignUp" /> : ""}</div>
+                                                    طالب
+                                            </div>
+                                        </div>
+                                    </h4>
 
-                                <div className="gender ms-auto">
-                                    <h4>الجنس: {userInfo.gender === "male" ? "ذكر" : "أنثى" }</h4>
                                 </div>
                         </div>
 
                         <div className="col-12 col-md-6 col-lg-6">
                             <div className="profile-pic">
 
-                                <div style={{ overflow: "hidden" }} className="profile-image">
+                                <div style={{ overflow: "hidden", backgroundColor:"#fff" }} className="profile-image">
                                     <img src={profilepic} alt="..." className="UserImage " />
 
                                 </div>
@@ -119,7 +139,7 @@ function Profile() {
 
                                         onClick={() => setShowTextArea(true)}
                                     />
-                                    <span className="fs-3">{userInfo.about}</span>
+                                    <span className="fs-3">{content === "جاري التحديث" ? content : userInfo.about}</span>
                                 </div>
                                 <div>{content}</div>
                                 {showTextArea ? (<form
@@ -131,14 +151,19 @@ function Profile() {
                                         onChange={(e) => setApiText(e.target.value)}
                                         name=""
                                         id="" cols="30" rows="10">
+                                        
 
                                     </textarea>
-                                    <input className="btn btn-youth" value="send"
+                                    <button className="btn btn-danger" 
+                                        style={{    margin: "0 10px"}}
+                                        onClick={() => setShowTextArea(false)}
+                                    >إلغاء</button>
+                                    <input className="btn btn-youth" value="تحديث"
                                         onClick={() => {
                                             setShowTextArea(false)
                                             updateBio()
 
-                                            setNewBio()
+                                            // setNewBio()
                                             setContent("جاري التحديث")
                                             setTimeout(() => {
                                                 setContent("")
@@ -149,10 +174,11 @@ function Profile() {
                                         }}
                                     />
                                 </form>) : ""}
-                                <div className="occupation" style={{padding:"4px 60px"}}>
-                                    <h4>الحالة: {userInfo.occupation === "studen" ? "طالب" : "موظف"}</h4>
-
-                                </div>
+                                <div className=" ms-auto emailField">
+                               <h4 >البريد الإلكتروني:</h4>
+                                    <h5>{userInfo.email}</h5>
+                            </div>
+                               
 
 
 

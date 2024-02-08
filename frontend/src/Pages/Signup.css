@@ -101,3 +101,8 @@
 .textareaPlace:focus {
     border: 2px solid #09dbbe;
 }
+.occupation {
+    background-color: #09dbbe;
+    color: #eee;
+    border-radius: 12px;
+}
