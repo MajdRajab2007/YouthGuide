@@ -34,7 +34,7 @@ import { useSelector } from "react-redux"
             <BlogSec />
             <OurServSec />
             <ContactUsSec />
-            <AboutUsSec />
+            {/* <AboutUsSec /> */}
             <Sponsers />
             <Footer />
           </div>

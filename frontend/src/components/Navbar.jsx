@@ -71,7 +71,7 @@ function Navbar() {
                                       تواصل معنا
                                 </Link>
                             </li>
-                            <li className="nav-item navLink">
+                            {/* <li className="nav-item navLink">
                                 <Link
                                 style={{color:"#eee"}}
                                     className="nav-link "
@@ -80,7 +80,7 @@ function Navbar() {
                                 >
                                       من نحن؟
                                 </Link>
-                            </li>
+                            </li> */}
                             <li className="nav-item profile-link">
                                 <Link
                                 style={{color:"#eee"}}

@@ -12,7 +12,7 @@ function Signup() {
     let [password, setPassword] = useState("");
     let [log, setLog] = useState(false)
     // setEmail("adham@gmail.com")
-    console.log(email);
+    // console.log(email);
     // const formSubmit = () => {
     //     fetch("http://127.0.0.1:8000/api/users", {
     //         method: "POST",

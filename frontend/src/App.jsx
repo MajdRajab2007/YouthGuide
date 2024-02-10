@@ -46,11 +46,11 @@ function App() {
             <Home />
           </PrivateRoute>
         } />
-        <Route path='/about-us' element={
+        {/* <Route path='/about-us' element={
           <PrivateRoute>
             <AboutUs />
           </PrivateRoute>
-        } />
+        } /> */}
         <Route path='/contact-us' element={
           <PrivateRoute>
             <ContactUs />

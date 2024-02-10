@@ -23,7 +23,7 @@ function Lesson() {
       
         }, [])
 
-        console.log(lessonDetails)
+        // console.log(lessonDetails)
         return (
         <>
                 <Loading display={display} />

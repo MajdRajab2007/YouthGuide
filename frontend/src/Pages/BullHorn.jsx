@@ -20,7 +20,7 @@ function BullHorn() {
         }, 2000)
     },[])
     
-    console.log(lessons)
+    // console.log(lessons)
 
 
     let threeArticles = <div className="row mt-3">
