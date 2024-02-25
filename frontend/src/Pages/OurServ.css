@@ -39,3 +39,29 @@
     -ms-border-radius: 12px;
     -o-border-radius: 12px;
 }
+.inProgress {
+    color: red;
+        animation-name: inprogress;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        border-radius: 12px;
+}
+@keyframes inprogress {
+    0% {
+        color: #09dbbe;
+        
+    }
+    25% {
+        color: #eee;
+        background-color: #09dbbe;
+        padding: 0 4px;
+    }
+    50% {
+        color: #1292ad;
+        background-color: #eee;
+    } 
+    75% {
+        color: black;
+
+    }
+}

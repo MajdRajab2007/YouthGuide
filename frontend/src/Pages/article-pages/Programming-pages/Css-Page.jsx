@@ -9,23 +9,25 @@ function CssPage() {
 
     let [lessons, setLessons] = useState([])
     useEffect(() => {
-        fetch("http://localhost:8000/api/posts/tag_lang/1/1/").then((res) => res.json()).then((data) => setLessons(data.data))
+        fetch("http://localhost:8000/api/posts/tag_lang/1/2/").then((res) => res.json()).then((data) => setLessons(data.data))
     },[])
 
 
 
     let threeArticles = <div className="row mt-3">
-        <TopThree name="2" section="1" />
+        <TopThree tag="tag_lang" name="2" section="1" />
 
 
 
-    <button onClick={() => setContent(allArticles)} className="showMore col-lg-4 col-md-6 col-12 btn">
+        <div className="row">
+            <button onClick={() => setContent(allArticles)} className="showMore col-lg-4 col-md-6 col-12 btn">
             عرض المزيد
     </button>
+            </div>
     </div>;
     let allArticles =    <div className="row mt-5">
 
-            <AllPosts name="2" section="1" />
+            <AllPosts tag="tag_lang" name="2" section="1" />
     </div>
 
     let [content, setContent] = useState(threeArticles)

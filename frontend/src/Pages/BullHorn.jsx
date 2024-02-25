@@ -13,28 +13,30 @@ function BullHorn() {
 
     let [lessons, setLessons] = useState([])
     useEffect(() => {
-        fetch("http://localhost:8000/api/posts/tag_lang/1/1/").then((res) => res.json()).then((data) => setLessons(data.data))
-
+        fetch("http://localhost:8000/api/posts/tag/2").then((res) => res.json()).then((data) => setLessons(data.data))
         setTimeout(() => {
             setDisplay("d-none")
             setDisplayNone("")
-          }, 2000)
+        }, 2000)
     },[])
-
+    
+    // console.log(lessons)
 
 
     let threeArticles = <div className="row mt-3">
-        <TopThree name="1" section="3" />
+        <TopThree tag="tag"  section="2" />
 
 
 
-    <button onClick={() => setContent(allArticles)} className="showMore col-lg-4 col-md-6 col-12 btn">
+            <div className="row">
+            <button onClick={() => setContent(allArticles)} className="showMore col-lg-4 col-md-6 col-12 btn">
             عرض المزيد
     </button>
+            </div>
     </div>;
     let allArticles =    <div className="row mt-5">
 
-            <AllPosts name="1" section="3" />
+            <AllPosts tag="tag"  section="2" />
     </div>
 
     let [content, setContent] = useState(threeArticles)

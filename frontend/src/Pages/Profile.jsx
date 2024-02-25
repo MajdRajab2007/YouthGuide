@@ -1,89 +1,189 @@
 import "./Profile.css"
 import background from "../images/backgroundForProfilePage.jpg"
 import logo from "../images/logo.png"
-import profilepic from "../images/profilePic.png"
-import { FaArrowAltCircleRight, FaLongArrowAltLeft, FaLongArrowAltRight, FaPlus } from "react-icons/fa"
+import profilepic from "../images/guest.png"
+import { FaArrowAltCircleRight, FaCircle, FaGgCircle, FaLongArrowAltLeft, FaLongArrowAltRight, FaPenAlt, FaPlus } from "react-icons/fa"
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import Loading from "../components/Loading"
+import axios from "axios"
 function Profile() {
+
+    let email = localStorage.getItem("email")
+
+    let [apiText, setApiText] = useState("")
+    let [apiImage, setApiImage] = useState("")
+    let [content, setContent] = useState("")
+    let [showTextArea, setShowTextArea] = useState(false)
+    let [userInfo, setUserInfo] = useState({})
     let [display, setDisplay] = useState("");
     let [displayNone, setDisplayNone] = useState("d-none");
+
+    let gender = userInfo.gender
+
     useEffect(() => {
+        fetch(`http://127.0.0.1:8000/api/users/${email}`).then((res) => res.json()).then((data) => setUserInfo(data.data))
+
         setTimeout(() => {
             setDisplay("d-none")
             setDisplayNone("")
         }, 2000)
     }, [])
+    // console.log(userInfo)
+
+
+    const updateBio = () => {
+        fetch(`http://localhost:8000/api/users/edit/${email}`,
+            {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: "PUT",
+                body: JSON.stringify({ about: apiText })
+            }).then(res => res.json())
+    }
+    const setNewBio = () => {
+        fetch(`http://127.0.0.1:8000/api/users/${email}`)
+            .then((res) => res.json())
+            .then((data) => setContent(data.data.about))
+    }
+
+    // Handle Upload Image
+    let [file, setFile] = useState(null)
+
+    const handleFile = (e) => {
+        setFile(e.target.files[0])
+
+    }
+    const updateImage = () => {
+        fetch(`http://127.0.0.1:8000/users/edit/${email}`,
+            {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: "PUT",
+                body: JSON.stringify({ image: apiImage })
+            }).then(res => res.json())
+    }
+    const handleUpload = (e) => {
+        let formData = new FormData()
+        formData.append('image', apiImage.name)
+
+
+        axios({
+            url: `http://localhost:8000/api/users/edit/${email}`,
+            method: 'PUT',
+            headers: {
+                Authorization: "your token",
+                Accept: 'application/json',
+                "Content-Type": 'application/json'
+            },
+            data: formData
+        })
+    }
 
     return (
         <>
-                <Loading display={display} />
+            <Loading display={display} />
             <div className={`profile ${displayNone}`}>
-                    <div >
-                        <img src={background} alt="..." className=" w-100 backgroundProfilePage" />
-                    </div>
-                    <div className="marginTopForImage"></div>
+               
+                <div className="marginTopForImage"></div>
                 <div className="container ">
-                    <div className="row profileDis" style={{    position: "relative",bottom: "1px"}}>
-                        <div className="col-12 col-md-6 col-lg-6">
-                            <div className="profile-read-header">
-                                    <h2>المقالات المقروءة</h2>
-                                    <button className="showAllReadButton">شاهد الكل</button>
-                            </div>
-                            <div className="row mt-5 ">
-                            <div className="col-6 reduceTheWidth ">
-                                 <div className="readCard">
-                                    <p className="courseName">HTML</p>
-                                    <p className="numberOfLessons">7+</p>
-                                    <div className="arrowConatiner">
-                                        <FaLongArrowAltRight className="ArrowAltRight" />
-                                    </div>
-                                    </div>
+                    <div className="row profileDis" style={{ position: "relative", bottom: "1px" }}>
+
+                        <div className="col-12 col-md-6 col-lg-6 athorInfo" >
+
+                                <div className="gender mt-4 ms-auto">
+                                    <h4>الجنس: 
+                                        <div className="genderSelction">
+                                            <div className="gend">
+                                                <div>{userInfo.gender === "male" ? <FaCircle className="selectedFromSignUp" /> : ""}</div>
+                                                ذكر
+                                            </div>
+                                            <div className="gend">
+                                                <div>{userInfo.gender === "female" ? <FaCircle className="selectedFromSignUp" /> : ""}</div>
+                                                    أنثى
+                                            </div>
+                                        </div>
+                                    </h4>
                                 </div>
-                            <div className="col-6 reduceTheWidth ">
-                                 <div className="readCard">
-                                    <p className="courseName">HTML</p>
-                                    <p className="numberOfLessons">7+</p>
-                                    <div className="arrowConatiner">
-                                        <FaLongArrowAltRight className="ArrowAltRight" />
-                                    </div>
-                                    </div>
+                                <div className="occupation mt-4" style={{width:"100%"}}>
+                                    <h4>الحالة: 
+                                    <div className="occupationSelction">
+                                            <div className="occupationField">
+                                                <div>{userInfo.occupation === "employed" ? <FaCircle className="selectedFromSignUp" /> : ""}</div>
+                                                موظف
+                                            </div>
+                                            <div className="occupationField">
+                                                <div>{userInfo.occupation === "student" ? <FaCircle className="selectedFromSignUp" /> : ""}</div>
+                                                    طالب
+                                            </div>
+                                        </div>
+                                    </h4>
+
                                 </div>
-                            <div className="col-6 reduceTheWidth ">
-                                 <div className="readCard">
-                                    <p className="courseName">HTML</p>
-                                    <p className="numberOfLessons">7+</p>
-                                    <div className="arrowConatiner">
-                                        <FaLongArrowAltRight className="ArrowAltRight" />
-                                    </div>
-                                    </div>
-                                </div>
-                            <div className="col-6 reduceTheWidth ">
-                                 <div className="readCard">
-                                    <p className="courseName">HTML</p>
-                                    <p className="numberOfLessons">7+</p>
-                                    <div className="arrowConatiner">
-                                        <FaLongArrowAltRight className="ArrowAltRight"  />
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
 
                         <div className="col-12 col-md-6 col-lg-6">
                             <div className="profile-pic">
 
-                                <div className="profile-image">
-                                <img src={logo} alt="..." className="UserImage " />
-                                <div className="changepic"><FaPlus/></div>
+                                <div style={{ overflow: "hidden", backgroundColor:"#fff" }} className="profile-image">
+                                    <img src={profilepic} alt="..." className="UserImage " />
+
                                 </div>
-                                <h1 className="text-center">سارة غزال</h1>
+                                <h1 className="text-center">{userInfo.name} {userInfo.lName}</h1>
+                                <div className="baio" >
+                                    <FaPenAlt className="ms-3 mb-2 editBio"
 
-                                    <p className="mt-4" style={{direction:"ltr",fontSize:"27px",fontWeight:"bold", display:"flex"}}>Email: <p className="fs-4 ms-3">saraghazal@gmail.com</p></p>
+                                        onClick={() => setShowTextArea(true)}
+                                    />
+                                    <span className="fs-3">{content === "جاري التحديث" ? content : userInfo.about}</span>
+                                </div>
+                                <div>{content}</div>
+                                {showTextArea ? (<form
+                                    method="POST"
+                                    action={`http://localhost:8000/api/users/edit/${email}`}
+                                >
+                                    <input style={{ width: "1px", height: "1px" }} type="text" name="about" value={apiText} />
+                                    <textarea className="textareaPlace"
+                                        onChange={(e) => setApiText(e.target.value)}
+                                        name=""
+                                        id="" cols="30" rows="10">
+                                        
 
-                                <h3 style={{direction:"ltr"}}>About:</h3>
-                                <p style={{direction:"ltr"}}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam assumenda ad hic repellat exercitationem? Eos rerum, enim vero alias deserunt excepturi libero fugit! Sapiente blanditiis repellendus quaerat consequuntur architecto unde?</p>
+                                    </textarea>
+                                    <button className="btn btn-danger" 
+                                        style={{    margin: "0 10px"}}
+                                        onClick={() => setShowTextArea(false)}
+                                    >إلغاء</button>
+                                    <input className="btn btn-youth" value="تحديث"
+                                        onClick={() => {
+                                            setShowTextArea(false)
+                                            updateBio()
+
+                                            // setNewBio()
+                                            setContent("جاري التحديث")
+                                            setTimeout(() => {
+                                                setContent("")
+                                                window.location.reload()
+
+                                            }, 3000)
+
+                                        }}
+                                    />
+                                </form>) : ""}
+                                <div className=" ms-auto emailField">
+                               <h4 >البريد الإلكتروني:</h4>
+                                    <h5>{userInfo.email}</h5>
+                            </div>
+                               
+
+
+
+
+
                             </div>
                         </div>
                     </div>

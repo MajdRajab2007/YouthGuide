@@ -8,15 +8,12 @@ import AboutUsSec from "../components/AboutUsSec"
 import Sponsers from "../components/Sponsers"
 import Footer from "../components/Footer"
 import Loading from "../components/Loading"
+import { useSelector } from "react-redux"
 
 
     function Home()
  {
-    // useEffect(() => {
-    //     if(window.location.href === 'http://localhost:8000/' ) {
-    //         localStorage.setItem('jwt','jwt')
-    //     }
-    // }, [])
+    
         let [display, setDisplay] = useState("");
         let [displayNone, setDisplayNone] = useState("d-none");
 
@@ -37,7 +34,7 @@ import Loading from "../components/Loading"
             <BlogSec />
             <OurServSec />
             <ContactUsSec />
-            <AboutUsSec />
+            {/* <AboutUsSec /> */}
             <Sponsers />
             <Footer />
           </div>

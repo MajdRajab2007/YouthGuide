@@ -16,7 +16,7 @@
     margin: 40px auto;
     height: 400px;
     text-decoration: none;
-    transition: 0.5s;
+    transition: 0.5s ease;
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
     -ms-transition: 0.5s;
@@ -27,13 +27,10 @@ a {
     text-decoration: none;
 }
 .articleBox:hover {
-    background: #fff;
+    background: unset;
+    background-color: #eee;
     color: #09dbbe;
-    transition: 0.5s;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
+  
 }
 
 .articleImage {
