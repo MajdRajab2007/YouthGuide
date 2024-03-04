@@ -38,7 +38,7 @@ class AuthController extends Controller
 
         $user = NormalUser::create($incomingFields);
 
-        $user->sendEmailVerificationNotification();
+       // $user->sendEmailVerificationNotification();
 
         return redirect('http://localhost:3000/');
     }
@@ -67,14 +67,9 @@ class AuthController extends Controller
 
         return response()->json($user);
     }
-<<<<<<< HEAD
 
     public function show(Request $request)
     {
-=======
-    
-    public function show(Request $request) {
->>>>>>> 7542599270cc6d0c8a82a621b956fa039f570f6c
         $user = NormalUser::where('email', $request->email)->first();
 
         if ($user) {
@@ -91,7 +86,6 @@ class AuthController extends Controller
         }
     }
     public function editUser(Request $request)
-<<<<<<< HEAD
     {
         // Retrieve the authenticated user
         $user = NormalUser::where('email', $request->email)->first();
@@ -105,17 +99,6 @@ class AuthController extends Controller
         if ($request->hasFile('image')) {
             // Get the new image file
             $image = $request->file('image');
-=======
-{
-    // dd($request);
-    // Retrieve the authenticated user
-    $user = NormalUser::where('email',$request->email)->first();
-
-    if ($request->hasFile('image')) {
-        
-        // Get the new image file
-        $image = $request->file('image');
->>>>>>> 7542599270cc6d0c8a82a621b956fa039f570f6c
 
             // Generate a unique filename for the new image
             $filename = uniqid() . '.' . $image->getClientOriginalExtension();
@@ -123,7 +106,6 @@ class AuthController extends Controller
             // Move the new image file to the public/storage directory
             $image->storeAs('public/storage', $filename);
 
-<<<<<<< HEAD
             // Update the user's image field with the new filename
             $user->image = $filename;
         }
@@ -137,32 +119,6 @@ class AuthController extends Controller
             'message' => 'User updated successfully.',
         ]);
     }
-=======
-        // Update the user's image field with the new filename
-        $user->image = $filename;
-    
-    // Validate the incoming request
-   
-
-    // Check if a new image file was uploaded
-   
-    // Save the updated user to the database
-    $user->save();
-
-    // Return a response indicating success
-    return response()->json([
-        'status' =>true,
-        'message'=>' done'
-    ]);
-}
-
-else{
-    return response()->json([
-        'status' =>false,
-        'message'=>'Not done'
-    ]);
-}}
->>>>>>> 7542599270cc6d0c8a82a621b956fa039f570f6c
     // public function editUser(Request $request){
 
     // }

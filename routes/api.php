@@ -27,15 +27,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('users/{email}',[AuthController::class,'show']);
-<<<<<<< HEAD
 Route::put('users/{email}',[AuthController::class,'editUser']);
-=======
-Route::get('users/{email}/data',[AuthController::class,'data']);
-//edit photo
-
-Route::put('users/edit/{email}',[AuthController::class,'edit']);
-Route::put('users/editPhoto/{email}',[AuthController::class,'editUser']);
->>>>>>> 7542599270cc6d0c8a82a621b956fa039f570f6c
 //find by tag name(video / graphic...)
 Route::get('posts/tag/{tag_name}',[PostsController::class,'showByTag']);
 Route::get('posts/tag/{tag_name}/{id}',[PostsController::class,'showByTagId']);
@@ -47,7 +39,7 @@ Route::get('posts/tag_lang/{tag_name}/{coding_language_name}/{id}',[PostsControl
 
 //get post by id
 Route::get('posts/{id}',[PostsController::class,'showById']);
-//search api 
+//search api
 Route::get('posts/search/{search}',[PostsController::class,'search']);
 
 Route::get('languages/',[CodingLanguageController::class,'showCodingLanguages']);
