@@ -16,18 +16,16 @@ function Sponsers() {
                     <div className="col-12">
                     <h2 className="text-center OurServSecH2 mb-2">شراكاتنا</h2>
                     </div>
-                            <div className="col-12 col-md-4 col-lg-3 mb-4">
+                            <div className="col-12 col-md-4 col-lg-4">
                                     <img src={orwan} alt="..." className="sponserImage w-100" style={{marginTop:"20%"}}/>
                             </div>
-                            <div className="col-12 col-md-4 col-lg-3 mb-4">
+                            <div className="col-12 col-md-4 col-lg-4">
                                     <img src={fosha} alt="..." className="sponserImage w-100" />
                             </div>
-                            <div className="col-12 col-md-4 col-lg-3 mb-4">
+                            <div className="col-12 col-md-4 col-lg-4">
                                     <img src={itc} alt="..." className="sponserImage w-100" />
                             </div>
-                            <div className="col-12 col-md-4 col-lg-3 ">
-                                    <img src={moon} alt="..." className="sponserImage w-100" />
-                            </div>
+
                     </div>
                 </div>
             </div>

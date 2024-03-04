@@ -13,7 +13,10 @@
     box-shadow:  8px 8px 15px #03a9f485;
 }
 .signupContainer {
-    height: 99%;
+    height: 90%;
+    width: 40%;
+    /* overflow: auto; */
+    /* margin-top: 10px; */
 }
 
 .logoAct {
@@ -24,13 +27,13 @@
     .formContainer {
         width: 65%;
     }
-    
+
 }
 @media (min-width: 920px) and (max-width:1110px) {
     .formContainer {
         width: 50%;
     }
-    
+
 }
 
 @media screen and (max-width:700px) {
@@ -82,7 +85,7 @@
     border-bottom: 2px solid #09dbbe;
 }
 .warning-message {
-    
+
     color: red;
     font-weight: bold;
     text-align: center;

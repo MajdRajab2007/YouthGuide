@@ -30,6 +30,7 @@ function Signup() {
     //         .then((data) => {
     //             navigate("/signin");
     //         });
+
     // };
 
 
@@ -41,7 +42,9 @@ function Signup() {
                 <div className="40-w p-5 rounded  formContainer signupContainer">
                     <form action="http://127.0.0.1:8000/register" method="POST">
                         <h3 className="text-center">تسجيل حساب جديد</h3>
-                        <div className="mb-2 mt-3">
+                        <div className="row">
+                            <div className="col-6">
+                            <div className="mb-2 mt-3">
                             <label htmlFor="name">الاسم</label>
                             <input
                                 onChange={(e) => {
@@ -79,38 +82,7 @@ function Signup() {
                                 className="warning"
                             ></p>
                         </div>
-                        <div className="mb-2">
-                            <label htmlFor="birthday">تاريخ الميلاد</label>
-                            <input
-                                onChange={(e) => {
-                                   setDate(e.target.value)
-                                }}
-                                required
-                                type="date"
-                                name="birthday"
-                                value={date}
-                                placeholder="تاريخ الميلاد"
-                                className="form-control"
-                            />
-                            <p
-                                style={{ color: "red", fontWeight: "bold" }}
-                                className="warning"
-                            ></p>
-                        </div>
-                        <div className="mb-2">
-                            <label >الجنس</label>
-                            <select name="gender" className="form-select selectField" aria-label="Default select example">
-                                <option value="male" name="male">ذكر</option>
-                                <option value="female" name="female">أنثى</option>
-                            </select>
-                        </div>
-                        <div className="mb-2">
-                            <label >الوضع المهني</label>
-                            <select name="occupation" className="form-select selectField" aria-label="Default select example">
-                                <option value="student" name="student">طالب</option>
-                                <option value="employed" name="employed">موظف</option>
-                            </select>
-                        </div>
+
                         {/* <div className="mb-2">
                             <label htmlFor="email">حدثنا عن نفسك</label>
                             <input
@@ -165,6 +137,42 @@ function Signup() {
                                 style={{ color: "red", fontWeight: "bold" }}
                                 className="warning"
                             ></p>
+                        </div>
+                            </div>
+                            <div className="col-6 mt-3">
+                            <div className="mb-2">
+                            <label htmlFor="birthday">تاريخ الميلاد</label>
+                            <input
+                                onChange={(e) => {
+                                   setDate(e.target.value)
+                                }}
+                                required
+                                type="date"
+                                name="birthday"
+                                value={date}
+                                placeholder="تاريخ الميلاد"
+                                className="form-control"
+                            />
+                            <p
+                                style={{ color: "red", fontWeight: "bold" }}
+                                className="warning"
+                            ></p>
+                        </div>
+                        <div className="mb-2">
+                            <label >الجنس</label>
+                            <select name="gender" className="form-select selectField" aria-label="Default select example">
+                                <option value="male" name="male">ذكر</option>
+                                <option value="female" name="female">أنثى</option>
+                            </select>
+                        </div>
+                        <div className="mb-2">
+                            <label >الوضع المهني</label>
+                            <select name="occupation" className="form-select selectField" aria-label="Default select example">
+                                <option value="student" name="student">طالب</option>
+                                <option value="employed" name="employed">موظف</option>
+                            </select>
+                        </div>
+                            </div>
                         </div>
 
                         <div className="d-grid">
