@@ -29,7 +29,7 @@ let jwt = "1544sad8as4d4sad45sa4f8sa4f8sa4fasf8a4sfas4f38yr83utrewgHGDHOIfuU9IOS
                         style={{ height: "70%" }}
                     >
                         <form
-                            action="http://127.0.0.1:8000/login"
+                            action="/login"
                             method="POST"
                             onSubmit={() => {
                                 localStorage.setItem(jwt, myCode)
@@ -85,7 +85,7 @@ let jwt = "1544sad8as4d4sad45sa4f8sa4f8sa4fasf8a4sfas4f38yr83utrewgHGDHOIfuU9IOS
 
                             <div className="d-grid">
                                 <input  onClick={() => {
-                                fetch(`http://127.0.0.1:8000/api/users/${email}`).then((res) => res.json()).then((data) => {
+                                fetch(`/api/users/${email}`).then((res) => res.json()).then((data) => {
                                     localStorage.setItem("email", data.data.email)
                                     
                                 })

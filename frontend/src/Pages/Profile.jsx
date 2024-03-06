@@ -22,7 +22,7 @@ function Profile() {
     let gender = userInfo.gender
 
     useEffect(() => {
-        fetch(`http://127.0.0.1:8000/api/users/${email}`).then((res) => res.json()).then((data) => setUserInfo(data.data))
+        fetch(`/api/users/${email}`).then((res) => res.json()).then((data) => setUserInfo(data.data))
 
         setTimeout(() => {
             setDisplay("d-none")
@@ -44,7 +44,7 @@ function Profile() {
             }).then(res => res.json())
     }
     const setNewBio = () => {
-        fetch(`http://127.0.0.1:8000/api/users/${email}`)
+        fetch(`/api/users/${email}`)
             .then((res) => res.json())
             .then((data) => setContent(data.data.about))
     }
@@ -57,7 +57,7 @@ function Profile() {
 
     }
     const updateImage = () => {
-        fetch(`http://127.0.0.1:8000/users/edit/${email}`,
+        fetch(`/users/edit/${email}`,
             {
                 headers: {
                     'Accept': 'application/json',
@@ -73,7 +73,7 @@ function Profile() {
 
 
         axios({
-            url: `http://localhost/api/users/edit/${email}`,
+            url: `/api/users/edit/${email}`,
             method: 'PUT',
             headers: {
                 Authorization: "your token",

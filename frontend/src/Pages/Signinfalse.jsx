@@ -28,7 +28,7 @@ function Signinfalse() {
                         style={{ height: "70%" }}
                     >
                         <form
-                            action="http://127.0.0.1:8000/login"
+                            action="/login"
                             method="POST"
                         >
                             <img
