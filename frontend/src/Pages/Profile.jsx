@@ -33,7 +33,7 @@ function Profile() {
 
 
     const updateBio = () => {
-        fetch(`http://localhost:8000/api/users/edit/${email}`,
+        fetch(`http://localhost/api/users/edit/${email}`,
             {
                 headers: {
                     'Accept': 'application/json',
@@ -73,7 +73,7 @@ function Profile() {
 
 
         axios({
-            url: `http://localhost:8000/api/users/edit/${email}`,
+            url: `http://localhost/api/users/edit/${email}`,
             method: 'PUT',
             headers: {
                 Authorization: "your token",
@@ -144,7 +144,7 @@ function Profile() {
                                 <div>{content}</div>
                                 {showTextArea ? (<form
                                     method="POST"
-                                    action={`http://localhost:8000/api/users/edit/${email}`}
+                                    action={`http://localhost/api/users/edit/${email}`}
                                 >
                                     <input style={{ width: "1px", height: "1px" }} type="text" name="about" value={apiText} />
                                     <textarea className="textareaPlace"

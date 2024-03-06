@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function TopThree(props) {
     let [lessons, setLessons] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:8000/api/posts/${props.tag}/${props.section}/${props.name || ""}`).then((res) => res.json()).then((data) => setLessons(data.data))
+        fetch(`http://localhost/api/posts/${props.tag}/${props.section}/${props.name || ""}`).then((res) => res.json()).then((data) => setLessons(data.data))
     },[])
 
        

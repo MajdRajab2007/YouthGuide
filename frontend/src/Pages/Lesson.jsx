@@ -14,7 +14,7 @@ function Lesson() {
     // console.log(params.lessonID)
     let lessonId = params.lessonID
     useEffect(() => {
-            fetch(`http://localhost:8000/api/posts/${lessonId}`).then((res) => res.json()).then((data) => setLessonDetails(data))
+            fetch(`http://localhost/api/posts/${lessonId}`).then((res) => res.json()).then((data) => setLessonDetails(data))
 
             setTimeout(() => {
                 setDisplay("d-none")
