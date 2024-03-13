@@ -14,7 +14,7 @@ function Signup() {
     // setEmail("adham@gmail.com")
     // console.log(email);
     // const formSubmit = () => {
-    //     fetch("http://127.0.0.1:8000/api/users", {
+    //     fetch("/api/users", {
     //         method: "POST",
     //         headers: {
     //             "Content-Type": "text/plain",
@@ -40,7 +40,7 @@ function Signup() {
             <img className="  logoAct" src={logo} alt="sada" />
             <div className="login template d-flex vh-100 ms-5 align-items-center w-100  backgroundForForm">
                 <div className="40-w p-5 rounded  formContainer signupContainer">
-                    <form action="http://127.0.0.1:8000/register" method="POST">
+                    <form action="/register" method="POST">
                         <h3 className="text-center">تسجيل حساب جديد</h3>
                         <div className="row">
                             <div className="col-6">

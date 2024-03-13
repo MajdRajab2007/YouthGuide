@@ -8,7 +8,7 @@ function BasicFigma() {
 
     let [lessons, setLessons] = useState([])
     useEffect(() => {
-        fetch("http://localhost:8000/api/posts/tag/7/").then((res) => res.json()).then((data) => setLessons(data.data))
+        fetch("http://localhost/api/posts/tag/7/").then((res) => res.json()).then((data) => setLessons(data.data))
     }, [])
 
 

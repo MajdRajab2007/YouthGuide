@@ -9,7 +9,7 @@ function PhpPage() {
 
     let [lessons, setLessons] = useState([])
     useEffect(() => {
-        fetch("http://localhost:8000/api/posts/tag_lang/1/4/").then((res) => res.json()).then((data) => setLessons(data.data))
+        fetch("http://localhost/api/posts/tag_lang/1/4/").then((res) => res.json()).then((data) => setLessons(data.data))
     },[])
 
 
