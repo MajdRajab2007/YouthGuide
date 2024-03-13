@@ -88,7 +88,7 @@ function Navbar() {
                                     aria-current="page"
                                     to="/profile"
                                 >
-                                    
+
                                     <img src={logo} alt="..." />
                                 </Link>
                             </li>

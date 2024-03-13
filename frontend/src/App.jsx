@@ -41,128 +41,128 @@ function App() {
     <>
 
       <Routes>
+          <Route path='/profile' element={
+            <PrivateRoute>
+              <Profile />
+            </PrivateRoute>
+          } />
         <Route path='/' element={
-          <PrivateRoute>
+        
             <Home />
-          </PrivateRoute>
+          
         } />
         {/* <Route path='/about-us' element={
-          <PrivateRoute>
+        
             <AboutUs />
-          </PrivateRoute>
+          
         } /> */}
         <Route path='/contact-us' element={
-          <PrivateRoute>
+        
             <ContactUs />
-          </PrivateRoute>
+          
         } />
         <Route path='/our-services' element={
-          <PrivateRoute>
+        
             <OurServ />
-          </PrivateRoute>
+          
         } />
         <Route path='/blog' element={
-          <PrivateRoute>
+        
             <Aticles />
-          </PrivateRoute>
-        } />
-        <Route path='/profile' element={
-          <PrivateRoute>
-            <Profile />
-          </PrivateRoute>
+          
         } />
         {/* <Route path='/road-map' element={
-          <PrivateRoute>
+        
             <RoadMap />
-          </PrivateRoute>
+          
         } /> */}
         <Route path='/signup' element={<Signup />} />
         <Route path='/signin' element={<Signin />} />
         <Route path='/signinfalse' element={<Signinfalse />} />
         <Route path='/programming' element={
-          <PrivateRoute>
+        
             <Programming />
-          </PrivateRoute>
+          
         } />
         <Route path='/programming/html' element={
-          <PrivateRoute>
+        
             <HtmlPage />
-          </PrivateRoute>
+          
         } />
         <Route path='/programming/css' element={
-          <PrivateRoute>
+        
             <CssPage />
-          </PrivateRoute>
+          
         } />
         <Route path='/programming/javascript' element={
-          <PrivateRoute>
+        
             <JsPage />
-          </PrivateRoute>
+          
         } />
         <Route path='/programming/c++' element={
-          <PrivateRoute>
+        
             <CppPage />
-          </PrivateRoute>
+          
         } />
         <Route path='/Designing-and-VideoEditing/Graphic-Design' element={
-          <PrivateRoute>
+        
             <GraphicDesign />
-          </PrivateRoute>
+          
         } />
         <Route path='/Designing-and-VideoEditing/Graphic-Design/Canva' element={
-          <PrivateRoute>
+        
             <Canva />
-          </PrivateRoute>
+          
         } />
         <Route path='/Designing-and-VideoEditing/Graphic-Design/Photoshop' element={
-          <PrivateRoute>
+        
             <Photoshop />
-          </PrivateRoute>
+          
         } />
         <Route path='/Designing-and-VideoEditing/ui-ux' element={
-          <PrivateRoute>
+        
             <UIUX />
-          </PrivateRoute>
+          
         } />
         <Route path='/Designing-and-VideoEditing/ui-ux/basics-ui-ux' element={
-          <PrivateRoute>
+        
             <BasicUiUx />
-          </PrivateRoute>
+          
         } />
         <Route path='/Designing-and-VideoEditing/ui-ux/basic-figma' element={
-          <PrivateRoute>
+        
             <BasicFigma />
-          </PrivateRoute>
+          
         } />
         <Route path='/programming/python' element={
-          <PrivateRoute>
+        
             <PythonPage />
-          </PrivateRoute>
+          
         } />
         <Route path='/programming/php' element={
-          <PrivateRoute>
+        
             <PhpPage />
-          </PrivateRoute>
+          
         } />
         {/* <Route path='/LeaderShip' element={
-          <PrivateRoute>
+        
             <LeaderShip />
-          </PrivateRoute>
+          
         } /> */}
         <Route path='/bullhorn' element={
-          <PrivateRoute>
+        
             <BullHorn />
-          </PrivateRoute>
+          
         } />
         <Route path='/Designing-and-VideoEditing' element={
-          <PrivateRoute>
+        
             <DesigningandVideoEditing />
-          </PrivateRoute>
+          
         } />
         <Route path='/blog/:lessonID' element={
-          <PrivateRoute>
+        
             <Lesson />
-          </PrivateRoute>
+          
         } />
       </Routes>
 
