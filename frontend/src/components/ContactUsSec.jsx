@@ -16,7 +16,9 @@ function ContactUsSec() {
                     <div className="col-12 contactUsSecCap row">
                             <div className="col-12 col-md-6 col-lg-6 sideCap">
                                 <div className="">
-                                    نقدّم في قسم المدونة مقالات متعددة بما يتعلق بالمجال التقني
+                                    إذا كنت مهتماً بالاطلاع على أحدث النشاطات والفعاليات البرمجية، يمكنك متابعة
+                                    آخر خبار الفريق على مواقع التواصل الاجتماعي
+                                    وغيرها...
                                 </div>
                                 <Link to="/contact-us" className="  artLink"><FaArrowAltCircleRight style={{fontSize:"81px", color:"#09dbbe"}}/></Link>
                             </div>

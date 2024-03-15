@@ -23,7 +23,7 @@ function BlogSec
                                 <div className="">
                                     نقدّم في قسم المدونة مقالات متعددة بما يتعلق بالمجال التقني
                                 </div>
-                                <Link to="/articles" className="  artLink"><FaArrowAltCircleRight style={{fontSize:"81px", color:"#09dbbe"}}/></Link>
+                                <Link to="/blog" className="  artLink"><FaArrowAltCircleRight style={{fontSize:"81px", color:"#09dbbe"}}/></Link>
                             </div>
                             <div className="col-12 blogImage mt-5 col-md-6 col-lg-6">
                                 <img src={blog} alt="..." className="img-fluid" />

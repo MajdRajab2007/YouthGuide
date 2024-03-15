@@ -15,7 +15,8 @@ function OurServSec() {
                     <div className="col-12 OurServSecCap row">
                             <div className="col-12 col-md-6 col-lg-6 sideCap">
                                 <div className="">
-                                        نقدم في هذا القسم خدمات نوعية تساعد في إثراء 
+                                نقدم في هذا القسم خدمات نوعية تساعدك في أثناء
+                                رحلة التعلم 
                                  </div>
                                 <Link to="/our-services" className="  artLink"><FaArrowAltCircleRight style={{fontSize:"81px", color:"#09dbbe"}}/></Link>
                             </div>
