@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\LoginRequest;
-use App\Http\Requests\RegisterRequest;
-use App\Http\Resources\UserResource;
-use App\Models\NormalUser;
 use App\Models\User;
+use App\Models\NormalUser;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use App\Http\Requests\LoginRequest;
+use App\Http\Resources\UserResource;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rule;
+use App\Http\Requests\RegisterRequest;
+use Illuminate\Auth\Events\Registered;
 
 class AuthController extends Controller
 {
@@ -38,8 +39,7 @@ class AuthController extends Controller
 
         $user = NormalUser::create($incomingFields);
 
-       // $user->sendEmailVerificationNotification();
-
+        event(new Registered($user));
         return redirect('http://localhost:3000/');
     }
     // login a user method

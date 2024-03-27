@@ -1,6 +1,6 @@
 import whiteLogo from "../images/logoWhite.png"
 import "./Loading.css"
-import loading from "../images/loading.mp4"
+import loading from "../images/Loading.mp4"
 function Loading(props) {
 
     return(<>
